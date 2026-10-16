@@ -273,3 +273,41 @@ footer {
     color: #fff;
     font-size: 13px;
 }
+/* تنسيق مبدل طرق الارتداء التفاعلي */
+.modular-toggle-container {
+    display: flex;
+    justify-content: center;
+    gap: 8px;
+    padding: 10px;
+    background-color: #f7f5f0;
+    border-bottom: 1px solid #eee;
+}
+
+.toggle-btn {
+    background-color: transparent;
+    border: 1px solid #d4af37;
+    color: #2c3e35;
+    padding: 6px 12px;
+    border-radius: 20px;
+    font-size: 11px;
+    font-family: 'Tajawal', sans-serif;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.toggle-btn.active, .toggle-btn:hover {
+    background-color: #2c3e35;
+    color: #d4af37;
+    border-color: #2c3e35;
+}
+
+/* تأثير التلاشي عند تغيير الصورة */
+.fade-in-img {
+    animation: fadeIn 0.4s ease-in-out;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0.4; }
+    to { opacity: 1; }
+}
