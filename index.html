@@ -111,7 +111,7 @@
                 </div>
             </div>
 
-            <!-- 4. صورة قلادة الرواشين التفاعلية (مع المبدل التفاعلي) -->
+            <!-- 4. صورة قلادة الرواشين التفاعلية -->
             <div class="product-item">
                 <div class="product-visual">
                     <img id="modularPendantImg" src="rawashin-interactive.png.jpg" alt="قلادة الرواشين المتحركة">
@@ -151,47 +151,4 @@
         </div>
     </section>
 
-    <!-- قسم قائمة الانتظار / الطلب المسبق -->
-    <section id="order">
-        <div class="waitlist">
-            <h2 id="waitlist-title" data-ar="كوني أول من يمتلك قطعة من تليد" data-en="Be First to Own a Piece of Taleed">كوني أول من يمتلك قطعة من تليد</h2>
-            <p id="waitlist-desc" data-ar="سجلي بياناتكِ لنضمكِ في قائمة الإصدار المحدود ولنخبركِ فور توفر العينات الأولى." data-en="Join our limited release waitlist to be notified as soon as the first sample is ready.">سجلي بياناتكِ لنضمكِ في قائمة الإصدار المحدود ولنخبركِ فور توفر العينات الأولى.</p>
-            <form onsubmit="handleFormSubmit(event)">
-                <input type="text" id="nameInput" placeholder="الاسم الكريم" required>
-                <input type="email" id="emailInput" placeholder="البريد الإلكتروني أو رقم الجوال" required>
-                <button type="submit" class="btn" id="btn-submit" style="background-color: #D4AF37; color: #2C3E35;" data-ar="سجلي اهتمامكِ" data-en="Join Waitlist">سجلي اهتمامكِ</button>
-            </form>
-        </div>
-    </section>
-
-    <!-- الفوتر -->
-    <footer>
-        <p id="footer-text" data-ar="&copy; 2026 تليد (Taleed). جميع الحقوق محفوظة." data-en="&copy; 2026 Taleed Jewelry. All Rights Reserved.">&copy; 2026 تليد (Taleed). جميع الحقوق محفوظة.</p>
-    </footer>
-
-    <!-- ربط ملف الـ JavaScript الخارجي -->
-    <script src="script.js"></script>
-    
-    <!-- دالة التبديل للوجهين التفاعليين -->
-    <script>
-        function switchWearOption(side) {
-            const imgElement = document.getElementById('modularPendantImg');
-            const buttons = document.querySelectorAll('.modular-toggle-container .toggle-btn');
-            
-            if (side === 'side1') {
-                imgElement.src = 'rawashin-interactive.png.jpg';
-                buttons[0].style.backgroundColor = '#2c3e35';
-                buttons[0].style.color = '#d4af37';
-                buttons[1].style.backgroundColor = 'transparent';
-                buttons[1].style.color = '#2c3e35';
-            } else if (side === 'side2') {
-                imgElement.src = 'natural-core-collection.png.jpg'; 
-                buttons[1].style.backgroundColor = '#2c3e35';
-                buttons[1].style.color = '#d4af37';
-                buttons[0].style.backgroundColor = 'transparent';
-                buttons[0].style.color = '#2c3e35';
-            }
-        }
-    </script>
-</body>
-</html>
+    <!-- قسم قائمة الانتظار
