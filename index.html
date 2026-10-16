@@ -4,8 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>تليد | حيث تلتقي الطبيعة بالتراث</title>
-    <!-- استيراد خط تجوال العربي -->
-    <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <!-- استيراد خط تجوال العربي وخط Montserrat للإنجليزي -->
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Tajawal:wght@300;400;500;700&display=swap" rel="stylesheet">
     <!-- ربط ملف الـ CSS الخارجي -->
     <link rel="stylesheet" href="style.css">
 </head>
@@ -14,68 +14,78 @@
     <!-- الهيدر -->
     <header>
         <h1>تَلِيد | TALEED</h1>
-        <a href="#order" class="btn">اطلبي الإصدار الأول</a>
+        
+        <div class="header-right">
+            <!-- قائمة اختيار اللغة -->
+            <div class="lang-selector">
+                <select id="langSelect" onchange="changeLanguage(this.value)">
+                    <option value="ar" selected>العربية (Arabic)</option>
+                    <option value="en">English (الإنجليزية)</option>
+                    <option value="fr" disabled>Français (الفرنسية - قريباً)</option>
+                    <option value="ja" disabled>日本語 (اليابانية - قريباً)</option>
+                </select>
+            </div>
+            <a href="#order" class="btn" id="btn-header" data-ar="اطلبي الإصدار الأول" data-en="Pre-Order First Edition">اطلبي الإصدار الأول</a>
+        </div>
     </header>
 
     <!-- القسم الرئيسي -->
     <section class="hero">
-        <h1>حيث تلتقي الطبيعة بالتراث</h1>
-        <p>مجوهرات معاصرة مستوحاة من تفاصيل البيئة السعودية والهوية الثقافية، مصممة خصيصاً لتناسب يومكِ بكل أناقة.</p>
-        <a href="#products" class="btn">استكشفي المجموعة الأولى</a>
+        <h1 id="hero-title" data-ar="حيث تلتقي الطبيعة بالتراث" data-en="Where Nature Meets Heritage">حيث تلتقي الطبيعة بالتراث</h1>
+        <p id="hero-desc" data-ar="مجوهرات معاصرة مستوحاة من تفاصيل البيئة السعودية والهوية الثقافية، مصممة خصيصاً لتناسب يومكِ بكل أناقة." data-en="Contemporary jewelry inspired by Saudi nature and cultural identity, designed to elevate your everyday style.">مجوهرات معاصرة مستوحاة من تفاصيل البيئة السعودية والهوية الثقافية، مصممة خصيصاً لتناسب يومكِ بكل أناقة.</p>
+        <a href="#products" class="btn" id="btn-hero" data-ar="استكشفي المجموعة الأولى" data-en="Explore First Collection">استكشفي المجموعة الأولى</a>
     </section>
 
     <!-- قسم المنتج الرئيسي (نواة جدة) -->
     <section id="products">
-        <h2>إصدار جدة — قطعة أثر المكان</h2>
+        <h2 id="section-jeddah-title" data-ar="إصدار جدة — قطعة أثر المكان" data-en="Jeddah Edition — Path of the Place">إصدار جدة — قطعة أثر المكان</h2>
         
         <div class="product-card">
             <div class="product-details">
-                <span class="tag">الإصدار الأول (JED-001)</span>
-                <h3>قلادة نواة جدة</h3>
-                <p>مستوحاة من انحناءة نواة التمر العضوية، مع تفاصيل هندسية دقيقة مستلهمة من فتحات الرواشين الحجازية. تصميم يجمع بين بساطة الطبيعة وجمال العمارة الحجازية.</p>
+                <span class="tag" id="prod-tag" data-ar="الإصدار الأول (JED-001)" data-en="First Edition (JED-001)">الإصدار الأول (JED-001)</span>
+                <h3 id="prod-title" data-ar="قلادة نواة جدة" data-en="Jeddah Date Seed Pendant">قلادة نواة جدة</h3>
+                <p id="prod-desc" data-ar="مستوحاة من انحناءة نواة التمر العضوية، مع تفاصيل هندسية دقيقة مستلهمة من فتحات الرواشين الحجازية. تصميم يجمع بين بساطة الطبيعة وجمال العمارة الحجازية." data-en="Inspired by the organic curvature of a date seed, featuring intricate geometric details derived from traditional Hijazi Rawashin windows.">مستوحاة من انحناءة نواة التمر العضوية، مع تفاصيل هندسية دقيقة مستلهمة من فتحات الرواشين الحجازية. تصميم يجمع بين بساطة الطبيعة وجمال العمارة الحجازية.</p>
                 <ul>
-                    <li>✨ <strong>الأبعاد:</strong> 30 × 12 مم</li>
-                    <li>✨ <strong>الخيارات:</strong> مطلي بالذهب / مطلي بالفضة</li>
-                    <li>✨ <strong>المميزات:</strong> تصميم خفيف ومريح مناسب للاستخدام اليومي</li>
+                    <li id="feat-1" data-ar="✨ الأبعاد: 30 × 12 مم" data-en="✨ Dimensions: 30 × 12 mm">✨ <strong>الأبعاد:</strong> 30 × 12 مم</li>
+                    <li id="feat-2" data-ar="✨ الخيارات: مطلي بالذهب / مطلي بالفضة" data-en="✨ Options: Gold Plated / Silver Plated">✨ <strong>الخيارات:</strong> مطلي بالذهب / مطلي بالفضة</li>
+                    <li id="feat-3" data-ar="✨ المميزات: تصميم خفيف ومريح مناسب للاستخدام اليومي" data-en="✨ Features: Lightweight & comfortable for everyday wear">✨ <strong>المميزات:</strong> تصميم خفيف ومريح مناسب للاستخدام اليومي</li>
                 </ul>
-                <span class="price">السعر المستهدف: 200 - 350 ريال سعودي</span>
-                <a href="#order" class="btn">احجزي قطعتكِ الآن</a>
+                <span class="price" id="prod-price" data-ar="السعر المستهدف: 200 - 350 ريال سعودي" data-en="Target Price: 200 - 350 SAR">السعر المستهدف: 200 - 350 ريال سعودي</span>
+                <a href="#order" class="btn" id="btn-prod" data-ar="احجزي قطعتكِ الآن" data-en="Reserve Yours Now">احجزي قطعتكِ الآن</a>
             </div>
             
-            <!-- الصورة الأولى: تفاصيل المنتج الرئيسي (الاسم الصحيح بدون تكرار) -->
             <div class="img-container">
-                <img src="jed-001.png" alt="قلادة نواة جدة JED-001 - التفاصيل والمواصفات">
+                <img src="jed-001.png" alt="قلادة نواة جدة JED-001">
             </div>
         </div>
     </section>
 
     <!-- قسم المعرض للمجموعة كاملة -->
     <section>
-        <h2>مجموعة جدة الكاملة</h2>
-        <p style="text-align: center; margin-bottom: 20px; color: #666;">ثلاثة عناصر من أرضنا تملؤها تصاميم تحكي هوية جدة (البن الخولاني، نواة التمر، السدر).</p>
+        <h2 id="section-coll-title" data-ar="مجموعة جدة الكاملة" data-en="Full Jeddah Collection">مجموعة جدة الكاملة</h2>
+        <p id="section-coll-desc" style="text-align: center; margin-bottom: 20px; color: #666;" data-ar="ثلاثة عناصر من أرضنا تملؤها تصاميم تحكي هوية جدة (البن الخولاني، نواة التمر، السدر)." data-en="Three elements from our land shaped into designs that tell Jeddah's story (Khawlani Coffee, Date Seed, Sidr Tree).">ثلاثة عناصر من أرضنا تملؤها تصاميم تحكي هوية جدة (البن الخولاني، نواة التمر، السدر).</p>
         
-        <!-- الصورة الثانية: لوحة المجموعة كاملة (الاسم الصحيح بدون تكرار) -->
         <div class="img-container">
-            <img src="talid-collection.png" alt="مجموعة جدة الكاملة - البن الخولاني ونواة التمر والسدر" style="max-width: 900px;">
+            <img src="talid-collection.png" alt="مجموعة جدة الكاملة" style="max-width: 900px;">
         </div>
     </section>
 
     <!-- قسم قائمة الانتظار / الطلب المسبق -->
     <section id="order">
         <div class="waitlist">
-            <h2>كوني أول من يمتلك قطعة من تليد</h2>
-            <p>سجلي بياناتكِ لنضمكِ في قائمة الإصدار المحدود ولنخبركِ فور توفر العينة الأولى.</p>
+            <h2 id="waitlist-title" data-ar="كوني أول من يمتلك قطعة من تليد" data-en="Be First to Own a Piece of Taleed">كوني أول من يمتلك قطعة من تليد</h2>
+            <p id="waitlist-desc" data-ar="سجلي بياناتكِ لنضمكِ في قائمة الإصدار المحدود ولنخبركِ فور توفر العينة الأولى." data-en="Join our limited release waitlist to be notified as soon as the first sample is ready.">سجلي بياناتكِ لنضمكِ في قائمة الإصدار المحدود ولنخبركِ فور توفر العينة الأولى.</p>
             <form onsubmit="handleFormSubmit(event)">
                 <input type="text" id="nameInput" placeholder="الاسم الكريم" required>
                 <input type="email" id="emailInput" placeholder="البريد الإلكتروني أو رقم الجوال" required>
-                <button type="submit" class="btn" style="background-color: #D4AF37; color: #2C3E35;">سجلي اهتمامكِ</button>
+                <button type="submit" class="btn" id="btn-submit" style="background-color: #D4AF37; color: #2C3E35;" data-ar="سجلي اهتمامكِ" data-en="Join Waitlist">سجلي اهتمامكِ</button>
             </form>
         </div>
     </section>
 
     <!-- الفوتر -->
     <footer>
-        <p>&copy; 2026 تليد (Taleed). جميع الحقوق محفوظة.</p>
+        <p id="footer-text" data-ar="&copy; 2026 تليد (Taleed). جميع الحقوق محفوظة." data-en="&copy; 2026 Taleed Jewelry. All Rights Reserved.">&copy; 2026 تليد (Taleed). جميع الحقوق محفوظة.</p>
     </footer>
 
     <!-- ربط ملف الـ JavaScript الخارجي -->
