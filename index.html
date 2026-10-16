@@ -10,12 +10,12 @@
     <!-- ربط ملف الـ CSS الخارجي -->
     <link rel="stylesheet" href="style.css">
 </head>
-<body>
+<body id="top">
 
     <!-- الهيدر -->
     <header>
-        <!-- عند الضغط على اسم الماركة يتم الرجوع لأعلى الصفحة الرئيسية -->
-        <h1><a href="#" style="color: inherit; text-decoration: none;">تَلِيد | TALEED</a></h1>
+        <!-- الضغط على اسم الماركة ينقلك فوراً لأعلى الصفحة الرئيسية -->
+        <h1><a href="#top" onclick="window.scrollTo({top: 0, behavior: 'smooth'});" style="color: inherit; text-decoration: none; cursor: pointer;">تَلِيد | TALEED</a></h1>
         
         <div class="header-right">
             <!-- قائمة اختيار اللغة -->
@@ -36,14 +36,14 @@
         <a href="#products" class="btn" id="btn-hero" data-ar="استكشفي المجموعات" data-en="Explore Collections">استكشفي المجموعات</a>
     </section>
 
-    <!-- معرض المنتجات الشامل -->
+    <!-- معرض المنتجات الشامل (الصور في الجذر بدون مجلد) -->
     <section id="products">
         <h2 id="section-collections-title" data-ar="معرض مجوهرات تليد وإصدار جدة" data-en="Taleed & Jeddah Edition Gallery">معرض مجوهرات تليد وإصدار جدة</h2>
         <p style="text-align: center; margin-bottom: 40px; color: #666;" data-ar="استكشفي التشكيلات الكاملة وتفاصيل القطع المصاغة بعناية من التراث والطبيعة" data-en="Explore the complete collections and exquisitely crafted pieces from heritage and nature">استكشفي التشكيلات الكاملة وتفاصيل القطع المصاغة بعناية من التراث والطبيعة</p>
         
         <div class="product-showcase">
             
-            <!-- 1. مجموعة تاليد الأساسية -->
+            <!-- 1. صورة مجموعة تاليد الأساسية -->
             <div class="product-item">
                 <div class="product-visual">
                     <img src="talid-collection.png" alt="مجموعة تاليد الأساسية">
@@ -59,7 +59,7 @@
                 </div>
             </div>
 
-            <!-- 2. قلادة نواة جدة -->
+            <!-- 2. صورة قلادة نواة جدة -->
             <div class="product-item">
                 <div class="product-visual">
                     <img src="jed-001.png" alt="قلادة نواة جدة">
@@ -75,7 +75,7 @@
                 </div>
             </div>
 
-            <!-- 3. مجموعة الجوهر الطبيعي -->
+            <!-- 3. صورة مجموعة الجوهر الطبيعي -->
             <div class="product-item">
                 <div class="product-visual">
                     <img src="natural-core-collection.png.jpg" alt="مجموعة الجوهر الطبيعي - قلادة نواة جدة وأقراط الرواشين">
@@ -91,7 +91,7 @@
                 </div>
             </div>
 
-            <!-- 4. قلادة الرواشين التفاعلية -->
+            <!-- 4. صورة قلادة الرواشين التفاعلية -->
             <div class="product-item">
                 <div class="product-visual">
                     <img src="rawashin-interactive.png.jpg" alt="قلادة الرواشين المتحركة">
@@ -110,7 +110,7 @@
         </div>
     </section>
 
-    <!-- 5. قسم الرسم التوضيحي لطرق الارتداء -->
+    <!-- 5. صورة قسم الرسم التوضيحي لطرق الارتداء -->
     <section class="diagram-section" style="background-color: #f7f5f0; padding: 50px 20px; text-align: center;">
         <h2 data-ar="فلسفة التغيير والتصميم التفاعلي" data-en="Modular Design & Wear Options">فلسفة التغيير والتصميم التفاعلي</h2>
         <p style="margin-bottom: 25px; color: #555;" data-ar="كيف تتحول القطعة الواحدة لتناسب مختلف إطلالاتكِ اليومية والرسمية" data-en="How a single modular piece adapts to both everyday and formal looks">كيف تتحول القطعة الواحدة لتناسب مختلف إطلالاتكِ اليومية والرسمية</p>
