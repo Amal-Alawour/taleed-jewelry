@@ -4,8 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>تليد | حيث تلتقي الطبيعة بالتراث</title>
-    <!-- استيراد خط تجوال العربي وخط Montserrat للإنجليزي -->
+    <!-- استيراد خطوط Tajawal و Montserrat وأيقونات Font Awesome -->
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Tajawal:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <!-- ربط ملف الـ CSS الخارجي -->
     <link rel="stylesheet" href="style.css">
 </head>
@@ -19,10 +20,8 @@
             <!-- قائمة اختيار اللغة -->
             <div class="lang-selector">
                 <select id="langSelect" onchange="changeLanguage(this.value)">
-                    <option value="ar" selected>العربية (Arabic)</option>
-                    <option value="en">English (الإنجليزية)</option>
-                    <option value="fr" disabled>Français (الفرنسية - قريباً)</option>
-                    <option value="ja" disabled>日本語 (اليابانية - قريباً)</option>
+                    <option value="ar" selected>العربية</option>
+                    <option value="en">English</option>
                 </select>
             </div>
             <a href="#order" class="btn" id="btn-header" data-ar="اطلبي الإصدار الأول" data-en="Pre-Order First Edition">اطلبي الإصدار الأول</a>
@@ -33,40 +32,57 @@
     <section class="hero">
         <h1 id="hero-title" data-ar="حيث تلتقي الطبيعة بالتراث" data-en="Where Nature Meets Heritage">حيث تلتقي الطبيعة بالتراث</h1>
         <p id="hero-desc" data-ar="مجوهرات معاصرة مستوحاة من تفاصيل البيئة السعودية والهوية الثقافية، مصممة خصيصاً لتناسب يومكِ بكل أناقة." data-en="Contemporary jewelry inspired by Saudi nature and cultural identity, designed to elevate your everyday style.">مجوهرات معاصرة مستوحاة من تفاصيل البيئة السعودية والهوية الثقافية، مصممة خصيصاً لتناسب يومكِ بكل أناقة.</p>
-        <a href="#products" class="btn" id="btn-hero" data-ar="استكشفي المجموعة الأولى" data-en="Explore First Collection">استكشفي المجموعة الأولى</a>
+        <a href="#products" class="btn" id="btn-hero" data-ar="استكشفي الكبسولة الكاملة" data-en="Explore Full Capsule">استكشفي الكبسولة الكاملة</a>
     </section>
 
-    <!-- قسم المنتج الرئيسي (نواة جدة) -->
+    <!-- قسم مجموعة إصدار جدة -->
     <section id="products">
-        <h2 id="section-jeddah-title" data-ar="إصدار جدة — قطعة أثر المكان" data-en="Jeddah Edition — Path of the Place">إصدار جدة — قطعة أثر المكان</h2>
+        <h2 id="section-jeddah-title" data-ar="إصدار جدة — مجموعة أثر المكان" data-en="Jeddah Edition — Path of the Place Collection">إصدار جدة — مجموعة أثر المكان</h2>
+        <p style="text-align: center; margin-bottom: 40px; color: #666;" data-ar="دمج بين رموز الطبيعة (النواة، البن، السدر) والتفاصيل الهندسية للرواشين الحجازية" data-en="Fusing Saudi environmental symbols with Hijazi Rawashin architectural details">دمج بين رموز الطبيعة (النواة، البن، السدر) والتفاصيل الهندسية للرواشين الحجازية</p>
         
-        <div class="product-card">
-            <div class="product-details">
-                <span class="tag" id="prod-tag" data-ar="الإصدار الأول (JED-001)" data-en="First Edition (JED-001)">الإصدار الأول (JED-001)</span>
-                <h3 id="prod-title" data-ar="قلادة نواة جدة" data-en="Jeddah Date Seed Pendant">قلادة نواة جدة</h3>
-                <p id="prod-desc" data-ar="مستوحاة من انحناءة نواة التمر العضوية، مع تفاصيل هندسية دقيقة مستلهمة من فتحات الرواشين الحجازية. تصميم يجمع بين بساطة الطبيعة وجمال العمارة الحجازية." data-en="Inspired by the organic curvature of a date seed, featuring intricate geometric details derived from traditional Hijazi Rawashin windows.">مستوحاة من انحناءة نواة التمر العضوية، مع تفاصيل هندسية دقيقة مستلهمة من فتحات الرواشين الحجازية. تصميم يجمع بين بساطة الطبيعة وجمال العمارة الحجازية.</p>
-                <ul>
-                    <li id="feat-1" data-ar="✨ الأبعاد: 30 × 12 مم" data-en="✨ Dimensions: 30 × 12 mm">✨ <strong>الأبعاد:</strong> 30 × 12 مم</li>
-                    <li id="feat-2" data-ar="✨ الخيارات: مطلي بالذهب / مطلي بالفضة" data-en="✨ Options: Gold Plated / Silver Plated">✨ <strong>الخيارات:</strong> مطلي بالذهب / مطلي بالفضة</li>
-                    <li id="feat-3" data-ar="✨ المميزات: تصميم خفيف ومريح مناسب للاستخدام اليومي" data-en="✨ Features: Lightweight & comfortable for everyday wear">✨ <strong>المميزات:</strong> تصميم خفيف ومريح مناسب للاستخدام اليومي</li>
-                </ul>
-                <span class="price" id="prod-price" data-ar="السعر المستهدف: 200 - 350 ريال سعودي" data-en="Target Price: 200 - 350 SAR">السعر المستهدف: 200 - 350 ريال سعودي</span>
-                <a href="#order" class="btn" id="btn-prod" data-ar="احجزي قطعتكِ الآن" data-en="Reserve Yours Now">احجزي قطعتكِ الآن</a>
-            </div>
+        <div class="product-showcase">
             
-            <div class="img-container">
-                <img src="jed-001.png" alt="قلادة نواة جدة JED-001">
+            <!-- 1. مجموعة الجوهر الطبيعي (القلادة والأقراط) -->
+            <div class="product-item">
+                <div class="product-visual">
+                    <img src="natural-core-collection.png" alt="مجموعة الجوهر الطبيعي - قلادة نواة جدة وأقراط الرواشين">
+                </div>
+                <div class="product-info">
+                    <span class="product-tag" data-ar="SKU: JED-001 & JED-002" data-en="SKU: JED-001 & JED-002">SKU: JED-001 & JED-002</span>
+                    <h3 data-ar="مجموعة الجوهر الطبيعي" data-en="Natural Core Group">مجموعة الجوهر الطبيعي</h3>
+                    <p data-ar="تضم قلادة نواة جدة المصممة بانحناءات عضوية مع فتحات الرواشين الدقيقة، بالإضافة إلى أقراط الأذن غير المتماثلة (Mismatched) التي تجمع بين النواة والهندسة الحجازية." data-en="Includes the Jeddah Date Seed Pendant with organic contours and intricate Rawashin lace, plus mismatched earrings pairing date seeds with Hijazi architectural patterns.">تضم قلادة نواة جدة المصممة بانحناءات عضوية مع فتحات الرواشين الدقيقة، بالإضافة إلى أقراط الأذن غير المتماثلة (Mismatched) التي تجمع بين النواة والهندسة الحجازية.</p>
+                    <div class="product-actions">
+                        <span class="price" data-ar="200 - 350 ريال" data-en="200 - 350 SAR">200 - 350 ريال</span>
+                        <a href="#order" class="add-to-cart-btn" data-ar="احجزي القطعة" data-en="Reserve Piece"><i class="fas fa-shopping-bag"></i> احجزي القطعة</a>
+                    </div>
+                </div>
             </div>
+
+            <!-- 2. مجموعة الأداء والتفاعل (قلادة الرواشين المتحركة) -->
+            <div class="product-item">
+                <div class="product-visual">
+                    <img src="rawashin-interactive.png" alt="قلادة الرواشين المتحركة">
+                </div>
+                <div class="product-info">
+                    <span class="product-tag" data-ar="SKU: JED-003 (متحركة)" data-en="SKU: JED-003 (Modular)">SKU: JED-003 (متحركة)</span>
+                    <h3 data-ar="قلادة الرواشين التفاعلية" data-en="Rawashin Interactive Pendant">قلادة الرواشين التفاعلية</h3>
+                    <p data-ar="قطعة مبتكرة قابلة للارتداء بطريقتين (Two-Way Wear)؛ وجه يعكس الرواشين الحجازية للمناسبات، ووجه يعكس بساطة ورقة السدر مع أحجار التركواز الناعمة للاستخدام اليومي." data-en="An innovative two-way wear modular pendant; one side features Hijazi Rawashin patterns, while the other showcases Sidr leaves with subtle turquoise accents.">قطعة مبتكرة قابلة للارتداء بطريقتين (Two-Way Wear)؛ وجه يعكس الرواشين الحجازية للمناسبات، ووجه يعكس بساطة ورقة السدر مع أحجار التركواز الناعمة للاستخدام اليومي.</p>
+                    <div class="product-actions">
+                        <span class="price" data-ar="300 - 450 ريال" data-en="300 - 450 SAR">300 - 450 ريال</span>
+                        <a href="#order" class="add-to-cart-btn" data-ar="احجزي القطعة" data-en="Reserve Piece"><i class="fas fa-shopping-bag"></i> احجزي القطعة</a>
+                    </div>
+                </div>
+            </div>
+
         </div>
     </section>
 
-    <!-- قسم المعرض للمجموعة كاملة -->
-    <section>
-        <h2 id="section-coll-title" data-ar="مجموعة جدة الكاملة" data-en="Full Jeddah Collection">مجموعة جدة الكاملة</h2>
-        <p id="section-coll-desc" style="text-align: center; margin-bottom: 20px; color: #666;" data-ar="ثلاثة عناصر من أرضنا تملؤها تصاميم تحكي هوية جدة (البن الخولاني، نواة التمر، السدر)." data-en="Three elements from our land shaped into designs that tell Jeddah's story (Khawlani Coffee, Date Seed, Sidr Tree).">ثلاثة عناصر من أرضنا تملؤها تصاميم تحكي هوية جدة (البن الخولاني، نواة التمر، السدر).</p>
-        
-        <div class="img-container">
-            <img src="talid-collection.png" alt="مجموعة جدة الكاملة" style="max-width: 900px;">
+    <!-- قسم الرسم التوضيحي لطرق الارتداء -->
+    <section class="diagram-section" style="background-color: #f7f5f0; padding: 50px 20px; text-align: center;">
+        <h2 data-ar="فلسفة التغيير والتصميم التفاعلي" data-en="Modular Design & Wear Options">فلسفة التغيير والتصميم التفاعلي</h2>
+        <p style="margin-bottom: 25px; color: #555;" data-ar="كيف تتحول القطعة الواحدة لتناسب مختلف إطلالاتكِ اليومية والرسمية" data-en="How a single modular piece adapts to both everyday and formal looks">كيف تتحول القطعة الواحدة لتناسب مختلف إطلالاتكِ اليومية والرسمية</p>
+        <div class="img-container" style="max-width: 850px; margin: 0 auto;">
+            <img src="wear-options-diagram.png" alt="رسم توضيحي لخيارات الارتداء" style="width: 100%; border-radius: 12px; box-shadow: 0 5px 20px rgba(0,0,0,0.08);">
         </div>
     </section>
 
@@ -74,7 +90,7 @@
     <section id="order">
         <div class="waitlist">
             <h2 id="waitlist-title" data-ar="كوني أول من يمتلك قطعة من تليد" data-en="Be First to Own a Piece of Taleed">كوني أول من يمتلك قطعة من تليد</h2>
-            <p id="waitlist-desc" data-ar="سجلي بياناتكِ لنضمكِ في قائمة الإصدار المحدود ولنخبركِ فور توفر العينة الأولى." data-en="Join our limited release waitlist to be notified as soon as the first sample is ready.">سجلي بياناتكِ لنضمكِ في قائمة الإصدار المحدود ولنخبركِ فور توفر العينة الأولى.</p>
+            <p id="waitlist-desc" data-ar="سجلي بياناتكِ لنضمكِ في قائمة الإصدار المحدود ولنخبركِ فور توفر العينات الأولى." data-en="Join our limited release waitlist to be notified as soon as the first sample is ready.">سجلي بياناتكِ لنضمكِ في قائمة الإصدار المحدود ولنخبركِ فور توفر العينات الأولى.</p>
             <form onsubmit="handleFormSubmit(event)">
                 <input type="text" id="nameInput" placeholder="الاسم الكريم" required>
                 <input type="email" id="emailInput" placeholder="البريد الإلكتروني أو رقم الجوال" required>
