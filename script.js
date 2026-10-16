@@ -61,3 +61,25 @@ function handleFormSubmit(event) {
     document.getElementById('nameInput').value = '';
     document.getElementById('emailInput').value = '';
 }
+// دالة مبدل طرق الارتداء التفاعلي لقلادة الرواشين
+function switchWearOption(side) {
+    const imgElement = document.getElementById('modularPendantImg');
+    const buttons = document.querySelectorAll('.modular-toggle-container .toggle-btn');
+    
+    // إعادة تطبيق تأثير الانقال البصري (Fade-in)
+    imgElement.classList.remove('fade-in-img');
+    void imgElement.offsetWidth; // Trigger reflow
+    imgElement.classList.add('fade-in-img');
+
+    if (side === 'side1') {
+        // صورة الوجه الأول (الرواشين)
+        imgElement.src = 'images/rawashin-interactive.png.jpg';
+        buttons[0].classList.add('active');
+        buttons[1].classList.remove('active');
+    } else if (side === 'side2') {
+        // صورة الوجه الثاني (طبيعة السدر) - يمكنك وضع مسار الصورة الثانية هنا
+        imgElement.src = 'images/natural-core-collection.png.jpg'; 
+        buttons[1].classList.add('active');
+        buttons[0].classList.remove('active');
+    }
+}
