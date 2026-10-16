@@ -194,3 +194,26 @@ footer {
     color: #888;
     font-size: 14px;
 }
+/* أضيفي هذا الجزء في أسفل ملف style.css */
+
+.header-right {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.lang-selector select {
+    padding: 8px 12px;
+    border-radius: 20px;
+    border: 1px solid var(--primary-color);
+    background-color: transparent;
+    color: var(--primary-color);
+    font-weight: 500;
+    cursor: pointer;
+    outline: none;
+    font-size: 14px;
+}
+
+.lang-selector select:hover {
+    background-color: rgba(44, 62, 53, 0.05);
+}
