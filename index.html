@@ -162,4 +162,67 @@
                     <h3 data-ar="حزام الرواشين التفاعلي" data-en="Interactive Rawashin Belt">حزام الرواشين التفاعلي</h3>
                     <p data-ar="حزام أنيق مطلي بالذهب عيار 18 قابل للتعديل والتحول؛ يمكن فك إبزيمه المركزي ليرتدى كقلادة فاخرة أو بروش." data-en="An elegant 18k gold-plated convertible belt with a detachable central pendant that doubles as a statement necklace.">حزام أنيق مطلي بالذهب عيار 18 قابل للتعديل والتحول؛ يمكن فك إبزيمه المركزي ليرتدى كقلادة فاخرة أو بروش.</p>
 
-                    <div style="margin-bottom
+                    <div style="margin-bottom: 15px;">
+                        <button onclick="alert('📜 حكاية الأثر الجغرافية:\nمستوحى من المحزم الحجازي الأصيل بإعادة صياغة عصرية تسمح بتنسيقه مع العبايات والفساتين العالمية.')" style="background: none; border: 1px solid #d4af37; color: #a67c52; padding: 5px 12px; border-radius: 15px; cursor: pointer; font-family: Tajawal; font-size: 12px; font-weight: bold;">📜 حكاية الأثر | Story Card</button>
+                    </div>
+
+                    <div class="product-actions">
+                        <span class="price" data-ar="550 - 750 ريال" data-en="550 - 750 SAR">550 - 750 ريال</span>
+                        <a href="#order" class="add-to-cart-btn" data-ar="احجزي القطعة" data-en="Reserve Piece"><i class="fas fa-shopping-bag"></i> احجزي القطعة</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 6. قسم الرسم التوضيحي لطرق الارتداء -->
+    <section class="diagram-section" style="background-color: #f7f5f0; padding: 50px 20px; text-align: center;">
+        <h2 data-ar="فلسفة التغيير والتصميم التفاعلي" data-en="Modular Design & Wear Options">فلسفة التغيير والتصميم التفاعلي</h2>
+        <p style="margin-bottom: 25px; color: #555;" data-ar="كيف تتحول القطعة الواحدة لتناسب مختلف إطلالاتكِ اليومية والرسمية" data-en="How a single modular piece adapts to your everyday look">كيف تتحول القطعة الواحدة لتناسب مختلف إطلالاتكِ اليومية والرسمية</p>
+        <div class="img-container" style="max-width: 850px; margin: 0 auto;">
+            <img src="wear-options-diagram.png.jpg" alt="رسم توضيحي لخيارات الارتداء" style="width: 100%; border-radius: 12px; box-shadow: 0 5px 20px rgba(0,0,0,0.08);">
+        </div>
+    </section>
+
+    <!-- قسم قائمة الانتظار / الطلب المسبق -->
+    <section id="order">
+        <div class="waitlist">
+            <h2 id="waitlist-title" data-ar="كوني أول من يمتلك قطعة من تليد" data-en="Be First to Own a Piece of Taleed">كوني أول من يمتلك قطعة من تليد</h2>
+            <p id="waitlist-desc" data-ar="سجلي بياناتكِ لنضمكِ في قائمة الإصدار المحدود ولنخبركِ فور توفر العينات الأولى." data-en="Join our limited release waitlist for early access.">سجلي بياناتكِ لنضمكِ في قائمة الإصدار المحدود ولنخبركِ فور توفر العينات الأولى.</p>
+            <form onsubmit="handleFormSubmit(event)">
+                <input type="text" id="nameInput" placeholder="الاسم الكريم" required>
+                <input type="email" id="emailInput" placeholder="البريد الإلكتروني أو رقم الجوال" required>
+                <button type="submit" class="btn" id="btn-submit" style="background-color: #D4AF37; color: #2C3E35;" data-ar="سجلي اهتمامكِ" data-en="Join Waitlist">سجلي اهتمامكِ</button>
+            </form>
+        </div>
+    </section>
+
+    <!-- الفوتر -->
+    <footer>
+        <p id="footer-text" data-ar="&copy; 2026 تليد (Taleed). جميع الحقوق محفوظة." data-en="&copy; 2026 Taleed Jewelry. All Rights Reserved.">&copy; 2026 تليد (Taleed). جميع الحقوق محفوظة.</p>
+    </footer>
+
+    <!-- ربط ملف الـ JavaScript الخارجي والوظائف -->
+    <script src="script.js"></script>
+    <script>
+        function switchWearOption(side) {
+            const imgElement = document.getElementById('modularPendantImg');
+            const buttons = document.querySelectorAll('.modular-toggle-container .toggle-btn');
+            
+            if (side === 'side1') {
+                imgElement.src = 'rawashin-interactive.png.jpg';
+                buttons[0].style.backgroundColor = '#2c3e35';
+                buttons[0].style.color = '#d4af37';
+                buttons[1].style.backgroundColor = 'transparent';
+                buttons[1].style.color = '#2c3e35';
+            } else if (side === 'side2') {
+                imgElement.src = 'natural-core-collection.png.jpg'; 
+                buttons[1].style.backgroundColor = '#2c3e35';
+                buttons[1].style.color = '#d4af37';
+                buttons[0].style.backgroundColor = 'transparent';
+                buttons[0].style.color = '#2c3e35';
+            }
+        }
+    </script>
+</body>
+</html>
