@@ -4,22 +4,18 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>تليد | مجوهرات معاصرة مستوحاة من التراث</title>
-    <!-- استيراد خطوط Tajawal و Montserrat وأيقونات Font Awesome -->
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Tajawal:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@300;400;500;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <!-- ربط ملف الـ CSS الخارجي -->
     <link rel="stylesheet" href="style.css">
 </head>
 <body id="top">
 
-    <!-- شريط الإهداء والحصرية -->
-    <div style="background-color: #1b2822; color: #d4af37; font-size: 12px; text-align: center; padding: 8px; font-weight: 500; letter-spacing: 0.5px;">
-        <span>✨ إصدارات محدودة ببطاقات حكاية وجواز أثر ثقافي مترجم مع كل قطعة</span>
+    <div style="background-color: #1b2822; color: #d4af37; font-size: 12px; text-align: center; padding: 8px; font-weight: 500;">
+        <span>إصدارات محدودة ببطاقات حكاية وجواز أثر ثقافي مترجم مع كل قطعة</span>
     </div>
 
-    <!-- الهيدر -->
     <header>
-        <h1><a href="#top" onclick="window.scrollTo({top: 0, behavior: 'smooth'});" style="color: inherit; text-decoration: none; cursor: pointer;">تَلِيد | TALEED</a></h1>
+        <h1><a href="#top" style="color: inherit; text-decoration: none;">تَلِيد | TALEED</a></h1>
         <div class="header-right">
             <div class="lang-selector">
                 <select id="langSelect" onchange="changeLanguage(this.value)">
@@ -27,166 +23,136 @@
                     <option value="en">English</option>
                 </select>
             </div>
-            <a href="#order" class="btn" id="btn-header" data-ar="اطلبي الإصدار الأول" data-en="Pre-Order First Edition">اطلبي الإصدار الأول</a>
+            <a href="#order" class="btn">اطلبي الإصدار الأول</a>
         </div>
     </header>
 
-    <!-- القسم الرئيسي -->
     <section class="hero">
-        <h1 id="hero-title" data-ar="حيث تلتقي الطبيعة بالتراث" data-en="Where Nature Meets Heritage">حيث تلتقي الطبيعة بالتراث</h1>
-        <p id="hero-desc" data-ar="مجوهرات معاصرة مستوحاة من تفاصيل البيئة السعودية والهوية الثقافية، مصممة بلغة عالمية لتناسب يومكِ بكل أناقة." data-en="Contemporary jewelry inspired by Saudi nature and cultural identity, designed for global elegance.">مجوهرات معاصرة مستوحاة من تفاصيل البيئة السعودية والهوية الثقافية، مصممة بلغة عالمية لتناسب يومكِ بكل أناقة.</p>
-        <a href="#products" class="btn" id="btn-hero" data-ar="استكشفي المجموعات" data-en="Explore Collections">استكشفي المجموعات</a>
+        <h1>حيث تلتقي الطبيعة بالتراث</h1>
+        <p>مجوهرات معاصرة مستوحاة من تفاصيل البيئة السعودية والهوية الثقافية، مصممة بلغة عالمية لتناسب يومك بكل أناقة.</p>
+        <a href="#products" class="btn">استكشفي المجموعات</a>
     </section>
 
-    <!-- شريط مميزات البراند الفاخر -->
-    <section style="background-color: #2c3e35; color: #d4af37; padding: 15px 20px; text-align: center; font-size: 13px; font-weight: 500;">
-        <span>✨ صياغة فاخرة مستوحاة من التراث والبيئة السعودية &nbsp;|&nbsp; 💎 طلاء ذهب عيار 18 عالي الجودة &nbsp;|&nbsp; 📜 جواز أثر رقمي ومطبوع مع كل قطعة</span>
+    <section style="background-color: #2c3e35; color: #d4af37; padding: 15px 20px; text-align: center; font-size: 13px;">
+        <span>صياغة فاخرة مستوحاة من التراث والبيئة السعودية | طلاء ذهب عيار 18 عالي الجودة | جواز أثر رقمي ومطبوع مع كل قطعة</span>
     </section>
 
-    <!-- معرض المنتجات الشامل -->
     <section id="products">
-        <h2 id="section-collections-title" data-ar="معرض مجوهرات تليد وإصدار جدة" data-en="Taleed & Jeddah Edition Gallery">معرض مجوهرات تليد وإصدار جدة</h2>
-        <p style="text-align: center; margin-bottom: 40px; color: #666;" data-ar="استكشفي التشكيلات الكاملة وتفاصيل القطع المصاغة بعناية من التراث والطبيعة" data-en="Explore the complete collections and exquisitely crafted pieces from heritage and nature">استكشفي التشكيلات الكاملة وتفاصيل القطع المصاغة بعناية من التراث والطبيعة</p>
+        <h2 style="text-align: center; color: #2c3e35;">معرض مجوهرات تليد وإصدار جدة</h2>
+        <p style="text-align: center; margin-bottom: 40px; color: #666;">استكشفي التشكيلات الكاملة وتفاصيل القطع المصاغة بعناية من التراث والطبيعة</p>
         
         <div class="product-showcase">
             
-            <!-- 1. مجموعة تاليد الأساسية -->
+            <!-- مجموعة تاليد الأساسية -->
             <div class="product-item">
                 <div class="product-visual">
                     <img src="talid-collection.png" alt="مجموعة تاليد الأساسية">
                 </div>
                 <div class="product-info">
-                    <span class="product-tag" data-ar="مجموعة تاليد الكلاسيكية" data-en="Taleed Classic Collection">مجموعة تاليد الكلاسيكية</span>
-                    <h3 data-ar="مجموعة تاليد العريقة" data-en="Taleed Heritage Collection">مجموعة تاليد العريقة</h3>
-                    <p data-ar="القطع التأسيسية للبراند، مستوحاة من خطوط نواة التمر والبن الخولاني بلمسات مطلية بالذهب المتألق تعكس الإرث العريق." data-en="The foundational pieces inspired by date seeds and Khulani coffee beans with gold-plated finishes.">القطع التأسيسية للبراند، مستوحاة من خطوط نواة التمر والبن الخولاني بلمسات مطلية بالذهب المتألق تعكس الإرث العريق.</p>
-                    
+                    <span class="product-tag">مجموعة تاليد الكلاسيكية</span>
+                    <h3>مجموعة تاليد العريقة</h3>
+                    <p>القطع التأسيسية للبراند، مستوحاة من خطوط نواة التمر والبن الخولاني بلمسات مطلية بالذهب المتألق تعكس الإرث العريق.</p>
                     <div style="margin-bottom: 15px;">
-                        <button onclick="alert('📜 حكاية الأثر الجغرافية:\nقطع تأسيسية تعبر عن أصالة النخيل وكرم الضيافة بأسلوب معاصر يناسب العواصم العالمية والإطلالات اليومية.')" style="background: none; border: 1px solid #d4af37; color: #a67c52; padding: 5px 12px; border-radius: 15px; cursor: pointer; font-family: Tajawal; font-size: 12px; font-weight: bold;">📜 حكاية الأثر | Story Card</button>
+                        <button onclick="alert('حكاية الأثر الجغرافية:\nقطع تأسيسية تعبر عن أصالة النخيل وكرم الضيافة بأسلوب معاصر يناسب العواصم العالمية.')" style="background: none; border: 1px solid #d4af37; color: #a67c52; padding: 5px 12px; border-radius: 15px; cursor: pointer; font-family: Tajawal; font-size: 12px; font-weight: bold;">حكاية الأثر | Story Card</button>
                     </div>
-
                     <div class="product-actions">
-                        <span class="price" data-ar="تبدأ من 250 ريال" data-en="Starts at 250 SAR">تبدأ من 250 ريال</span>
-                        <a href="#order" class="add-to-cart-btn" data-ar="احجزي القطعة" data-en="Reserve Piece"><i class="fas fa-shopping-bag"></i> احجزي القطعة</a>
+                        <span class="price">تبدأ من 250 ريال</span>
+                        <a href="#order" class="add-to-cart-btn"><i class="fas fa-shopping-bag"></i> احجزي القطعة</a>
                     </div>
                 </div>
             </div>
 
-            <!-- 2. قلادة نواة جدة -->
+            <!-- قلادة نواة جدة -->
             <div class="product-item">
                 <div class="product-visual">
                     <img src="jed-001.png" alt="قلادة نواة جدة">
                 </div>
                 <div class="product-info">
-                    <span class="product-tag" data-ar="SKU: JED-001" data-en="SKU: JED-001">SKU: JED-001</span>
-                    <h3 data-ar="قلادة نواة جدة" data-en="Jeddah Date Seed Pendant">قلادة نواة جدة</h3>
-                    <p data-ar="قلادة مصاغة بدقة ومطلية بالذهب الفاخر عيار 18 بتفاصيل تحاكي الطبيعة وزخارف الرواشين." data-en="Handcrafted 18k gold-plated pendant with natural textures and Rawashin details.">قلادة مصاغة بدقة ومطلية بالذهب الفاخر عيار 18 بتفاصيل تحاكي الطبيعة وزخارف الرواشين.</p>
-                    
+                    <span class="product-tag">SKU: JED-001</span>
+                    <h3>قلادة نواة جدة</h3>
+                    <p>قلادة مصاغة بدقة ومطلية بالذهب الفاخر عيار 18 بتفاصيل تحاكي الطبيعة وزخارف الرواشين.</p>
                     <div style="margin-bottom: 15px;">
-                        <button onclick="alert('📜 حكاية الأثر الجغرافية:\nتجمع بين انحناءات النواة وانسيابية المشربيات الحجازية في جدة التاريخية لتشكل تحفة فاخرة تعبر عن ثقافة البحر الأحمر.')" style="background: none; border: 1px solid #d4af37; color: #a67c52; padding: 5px 12px; border-radius: 15px; cursor: pointer; font-family: Tajawal; font-size: 12px; font-weight: bold;">📜 حكاية الأثر | Story Card</button>
+                        <button onclick="alert('حكاية الأثر الجغرافية:\nتجمع بين انحناءات النواة وانسيابية المشربيات الحجازية في جدة التاريخية لتشكل تحفة فاخرة.')" style="background: none; border: 1px solid #d4af37; color: #a67c52; padding: 5px 12px; border-radius: 15px; cursor: pointer; font-family: Tajawal; font-size: 12px; font-weight: bold;">حكاية الأثر | Story Card</button>
                     </div>
-
                     <div class="product-actions">
-                        <span class="price" data-ar="350 ريال" data-en="350 SAR">350 ريال</span>
-                        <a href="#order" class="add-to-cart-btn" data-ar="احجزي القطعة" data-en="Reserve Piece"><i class="fas fa-shopping-bag"></i> احجزي القطعة</a>
+                        <span class="price">350 ريال</span>
+                        <a href="#order" class="add-to-cart-btn"><i class="fas fa-shopping-bag"></i> احجزي القطعة</a>
                     </div>
                 </div>
             </div>
 
-            <!-- 3. مجموعة الجوهر الطبيعي -->
+            <!-- مجموعة الجوهر الطبيعي -->
             <div class="product-item">
                 <div class="product-visual">
-                    <img src="natural-core-collection.png.jpg" alt="مجموعة الجوهر الطبيعي - قلادة نواة جدة وأقراط الرواشين">
+                    <img src="natural-core-collection.png.jpg" alt="مجموعة الجوهر الطبيعي">
                 </div>
                 <div class="product-info">
-                    <span class="product-tag" data-ar="إصدار جدة — الجوهر الطبيعي" data-en="Jeddah Edition — Natural Core">إصدار جدة — الجوهر الطبيعي</span>
-                    <h3 data-ar="مجموعة الجوهر الطبيعي والأقراط" data-en="Natural Core Group">مجموعة الجوهر الطبيعي والأقراط</h3>
-                    <p data-ar="تضم قلادة نواة جدة المطلية بالذهب بالإضافة إلى أقراط الأذن غير المتماثلة التي تجمع بين النواة والهندسة الحجازية." data-en="Includes the gold-plated Jeddah Date Seed Pendant plus mismatched earrings pairing date seeds with Hijazi patterns.">تضم قلادة نواة جدة المطلية بالذهب بالإضافة إلى أقراط الأذن غير المتماثلة التي تجمع بين النواة والهندسة الحجازية.</p>
-
+                    <span class="product-tag">إصدار جدة — الجوهر الطبيعي</span>
+                    <h3>مجموعة الجوهر الطبيعي والأقراط</h3>
+                    <p>تضم قلادة نواة جدة المطلية بالذهب بالإضافة إلى أقراط الأذن غير المتماثلة التي تجمع بين النواة والهندسة الحجازية.</p>
                     <div style="margin-bottom: 15px;">
-                        <button onclick="alert('📜 حكاية الأثر الجغرافية:\nتصميم الأقراط غير المتماثلة يعكس الفلسفة المعمارية الحديثة القائمة على التباين والتناغم بين الهندسة والتراث.')" style="background: none; border: 1px solid #d4af37; color: #a67c52; padding: 5px 12px; border-radius: 15px; cursor: pointer; font-family: Tajawal; font-size: 12px; font-weight: bold;">📜 حكاية الأثر | Story Card</button>
+                        <button onclick="alert('حكاية الأثر الجغرافية:\nتصميم الأقراط غير المتماثلة يعكس الفلسفة المعمارية الحديثة القائمة على التباين والتناغم.')" style="background: none; border: 1px solid #d4af37; color: #a67c52; padding: 5px 12px; border-radius: 15px; cursor: pointer; font-family: Tajawal; font-size: 12px; font-weight: bold;">حكاية الأثر | Story Card</button>
                     </div>
-
                     <div class="product-actions">
-                        <span class="price" data-ar="200 - 350 ريال" data-en="200 - 350 SAR">200 - 350 ريال</span>
-                        <a href="#order" class="add-to-cart-btn" data-ar="احجزي القطعة" data-en="Reserve Piece"><i class="fas fa-shopping-bag"></i> احجزي القطعة</a>
+                        <span class="price">200 - 350 ريال</span>
+                        <a href="#order" class="add-to-cart-btn"><i class="fas fa-shopping-bag"></i> احجزي القطعة</a>
                     </div>
                 </div>
             </div>
 
-            <!-- 4. قلادة الرواشين التفاعلية -->
+            <!-- قلادة الرواشين التفاعلية -->
             <div class="product-item">
                 <div class="product-visual">
                     <img id="modularPendantImg" src="rawashin-interactive.png.jpg" alt="قلادة الرواشين المتحركة">
                 </div>
-
-                <div class="modular-toggle-container" style="display: flex; justify-content: center; gap: 8px; padding: 10px; background-color: #f7f5f0; border-bottom: 1px solid #eee;">
-                    <button class="toggle-btn active" onclick="switchWearOption('side1')" style="background-color: #2c3e35; color: #d4af37; border: 1px solid #d4af37; padding: 6px 12px; border-radius: 20px; font-size: 11px; font-family: Tajawal; font-weight: bold; cursor: pointer;">الوجه الأول: أثر الرواشين</button>
-                    <button class="toggle-btn" onclick="switchWearOption('side2')" style="background-color: transparent; color: #2c3e35; border: 1px solid #d4af37; padding: 6px 12px; border-radius: 20px; font-size: 11px; font-family: Tajawal; font-weight: bold; cursor: pointer;">الوجه الثاني: طبيعة السدر</button>
-                </div>
-
                 <div class="product-info">
-                    <span class="product-tag" data-ar="SKU: JED-003 (متحركة)" data-en="SKU: JED-003 (Modular)">SKU: JED-003 (متحركة)</span>
-                    <h3 data-ar="قلادة الرواشين التفاعلية" data-en="Rawashin Interactive Pendant">قلادة الرواشين التفاعلية</h3>
-                    <p data-ar="قطعة مبتكرة مطلية بالذهب عيار 18 قابلة للارتداء بطريقتين؛ وجه يعكس الرواشين الحجازية، ووجه يعكس طبيعة السدر مع أحجار التركواز." data-en="An innovative gold-plated two-way wear modular pendant featuring Rawashin and Sidr designs.">قطعة مبتكرة مطلية بالذهب عيار 18 قابلة للارتداء بطريقتين؛ وجه يعكس الرواشين الحجازية، ووجه يعكس طبيعة السدر مع أحجار التركواز.</p>
-
+                    <span class="product-tag">SKU: JED-003 (متحركة)</span>
+                    <h3>قلادة الرواشين التفاعلية</h3>
+                    <p>قطعة مبتكرة مطلية بالذهب عيار 18 قابلة للارتداء بطريقتين؛ وجه يعكس الرواشين الحجازية، ووجه يعكس طبيعة السدر.</p>
                     <div style="margin-bottom: 15px;">
-                        <button onclick="alert('📜 حكاية الأثر الجغرافية:\nتصميم معاصر قابل للدوران يمنحكِ خيار التبديل بين طابع الأصالة الحجازية وأناقة الطبيعة العصرية بلمسة واحدة.')" style="background: none; border: 1px solid #d4af37; color: #a67c52; padding: 5px 12px; border-radius: 15px; cursor: pointer; font-family: Tajawal; font-size: 12px; font-weight: bold;">📜 حكاية الأثر | Story Card</button>
+                        <button onclick="alert('حكاية الأثر الجغرافية:\nتصميم معاصر قابل للدوران يمنحك خيار التبديل بين الأصالة الحجازية وأناقة الطبيعة بلمسة واحدة.')" style="background: none; border: 1px solid #d4af37; color: #a67c52; padding: 5px 12px; border-radius: 15px; cursor: pointer; font-family: Tajawal; font-size: 12px; font-weight: bold;">حكاية الأثر | Story Card</button>
                     </div>
-
                     <div class="product-actions">
-                        <span class="price" data-ar="300 - 450 ريال" data-en="300 - 450 SAR">300 - 450 ريال</span>
-                        <a href="#order" class="add-to-cart-btn" data-ar="احجزي القطعة" data-en="Reserve Piece"><i class="fas fa-shopping-bag"></i> احجزي القطعة</a>
+                        <span class="price">300 - 450 ريال</span>
+                        <a href="#order" class="add-to-cart-btn"><i class="fas fa-shopping-bag"></i> احجزي القطعة</a>
                     </div>
                 </div>
             </div>
 
-        </div>
-    </section>
-
-    <!-- 5. تشكيلة الأحزمة وإكسسوارات الحقائب والدلايات الفاخرة -->
-    <section id="belts" style="padding: 40px 20px; background-color: #faf9f6;">
-        <h2 style="text-align: center; color: #2c3e35; font-family: Tajawal; margin-bottom: 10px;" data-ar="تشكيلة الأحزمة وإكسسوارات الحقائب والدلايات" data-en="Heritage Belts, Bag Straps & Charms">تشكيلة الأحزمة وإكسسوارات الحقائب والدلايات</h2>
-        <p style="text-align: center; color: #666; font-size: 14px; margin-bottom: 30px;" data-ar="إعادة صياغة عصرية للقطع التراثية بأسلوب متعدد الاستخدامات للخصر، الحقائب والمفاتيح" data-en="Contemporary redesign of heritage pieces adaptable as waist belts, bag straps and charms">إعادة صياغة عصرية للقطع التراثية بأسلوب متعدد الاستخدامات للخصر، الحقائب والمفاتيح</p>
-        
-        <div class="product-showcase">
-            <!-- 5.1 حزام الرواشين للخصر -->
+            <!-- حزام الرواشين التفاعلي -->
             <div class="product-item">
                 <div class="product-visual">
                     <img src="Taleed-belt.jpg" alt="حزام الرواشين التفاعلي">
                 </div>
                 <div class="product-info">
-                    <span class="product-tag" data-ar="إصدار خاص — أحزمة الخصر" data-en="Special Edition — Waist Belt">إصدار خاص — أحزمة الخصر</span>
-                    <h3 data-ar="حزام الرواشين التفاعلي" data-en="Interactive Rawashin Belt">حزام الرواشين التفاعلي</h3>
-                    <p data-ar="حزام أنيق مطلي بالذهب عيار 18 قابل للتعديل والتحول؛ يمكن فك إبزيمه المركزي ليرتدى كقلادة فاخرة أو بروش." data-en="An elegant 18k gold-plated convertible belt with a detachable central pendant that doubles as a statement necklace.">حزام أنيق مطلي بالذهب عيار 18 قابل للتعديل والتحول؛ يمكن فك إبزيمه المركزي ليرتدى كقلادة فاخرة أو بروش.</p>
-
+                    <span class="product-tag">إصدار خاص — أحزمة الخصر</span>
+                    <h3>حزام الرواشين التفاعلي</h3>
+                    <p>حزام أنيق مطلي بالذهب عيار 18 قابل للتعديل والتحول؛ يمكن فك إبزيمه المركزي ليرتدى كقلادة فاخرة أو بروش.</p>
                     <div style="margin-bottom: 15px;">
-                        <button onclick="alert('📜 حكاية الأثر الجغرافية:\nمستوحى من المحزم الحجازي الأصيل بإعادة صياغة عصرية تسمح بتنسيقه مع العبايات والفساتين العالمية.')" style="background: none; border: 1px solid #d4af37; color: #a67c52; padding: 5px 12px; border-radius: 15px; cursor: pointer; font-family: Tajawal; font-size: 12px; font-weight: bold;">📜 حكاية الأثر | Story Card</button>
+                        <button onclick="alert('حكاية الأثر الجغرافية:\nمستوحى من المحزم الحجازي الأصيل بإعادة صياغة عصرية تسمح بتنسيقه مع العبايات.')" style="background: none; border: 1px solid #d4af37; color: #a67c52; padding: 5px 12px; border-radius: 15px; cursor: pointer; font-family: Tajawal; font-size: 12px; font-weight: bold;">حكاية الأثر | Story Card</button>
                     </div>
-
                     <div class="product-actions">
-                        <span class="price" data-ar="550 - 750 ريال" data-en="550 - 750 SAR">550 - 750 ريال</span>
-                        <a href="#order" class="add-to-cart-btn" data-ar="احجزي القطعة" data-en="Reserve Piece"><i class="fas fa-shopping-bag"></i> احجزي القطعة</a>
+                        <span class="price">550 - 750 ريال</span>
+                        <a href="#order" class="add-to-cart-btn"><i class="fas fa-shopping-bag"></i> احجزي القطعة</a>
                     </div>
                 </div>
             </div>
 
-            <!-- 5.2 دلاية المفاتيح الفاخرة | Heritage Key Charm -->
+            <!-- دلاية المفاتيح الفاخرة -->
             <div class="product-item">
                 <div class="product-visual">
-                    <img src="Key-charm.png?v=2" alt="دلاية المفاتيح الفاخرة">
+                    <img src="Key-charm.png" alt="دلاية المفاتيح الفاخرة">
                 </div>
                 <div class="product-info">
-                    <span class="product-tag" data-ar="إصدار حصري — إكسسوارات متعددة الاستخدام" data-en="Exclusive Edition — Modular Accessories">إصدار حصري — إكسسوارات متعددة الاستخدام</span>
-                    <h3 data-ar="دلاية المفاتيح الفاخرة | Heritage Key Charm" data-en="Heritage Key Charm">دلاية المفاتيح الفاخرة | Heritage Key Charm</h3>
-                    <p data-ar="قطعة تجمع بين أصالة التراث وجمال الطبيعة بقطع قابلة للفصل لتستخدم كمفتاح، دلاية شنطة، أو إكسسوار للعباية." data-en="A piece blending heritage and nature with detachable components to be used as a keychain, bag charm, or abaya accessory.">قطعة تجمع بين أصالة التراث وجمال الطبيعة بقطع قابلة للفصل لتستخدم كمفتاح، دلاية شنطة، أو إكسسوار للعباية.</p>
-
+                    <span class="product-tag">إصدار حصري — إكسسوارات متعددة الاستخدام</span>
+                    <h3>دلاية المفاتيح الفاخرة | Heritage Key Charm</h3>
+                    <p>قطعة تجمع بين أصالة التراث وجمال الطبيعة بقطع قابلة للفصل لتستخدم كمفتاح، دلاية شنطة، أو إكسسوار للعباية.</p>
                     <div style="margin-bottom: 15px;">
-                        <button onclick="alert('📜 حكاية الأثر الجغرافية:\nمصاغة بذهب عيار 18 والتركواز الطبيعي، مستوحاة من عراقة النخيل والهندسة المعمارية لتعكس الأناقة في أبسط تفاصيل يومكِ.')" style="background: none; border: 1px solid #d4af37; color: #a67c52; padding: 5px 12px; border-radius: 15px; cursor: pointer; font-family: Tajawal; font-size: 12px; font-weight: bold;">📜 حكاية الأثر | Story Card</button>
+                        <button onclick="alert('حكاية الأثر الجغرافية:\nمصاغة بذهب عيار 18 والتركواز الطبيعي، مستوحاة من عراقة النخيل والهندسة المعمارية.')" style="background: none; border: 1px solid #d4af37; color: #a67c52; padding: 5px 12px; border-radius: 15px; cursor: pointer; font-family: Tajawal; font-size: 12px; font-weight: bold;">حكاية الأثر | Story Card</button>
                     </div>
-
                     <div class="product-actions">
-                        <span class="price" data-ar="280 - 380 ريال" data-en="280 - 380 SAR">280 - 380 ريال</span>
-                        <a href="#order" class="add-to-cart-btn" data-ar="احجزي القطعة" data-en="Reserve Piece"><i class="fas fa-shopping-bag"></i> احجزي القطعة</a>
+                        <span class="price">280 - 380 ريال</span>
+                        <a href="#order" class="add-to-cart-btn"><i class="fas fa-shopping-bag"></i> احجزي القطعة</a>
                     </div>
                 </div>
             </div>
@@ -194,54 +160,23 @@
         </div>
     </section>
 
-    <!-- 6. قسم الرسم التوضيحي لطرق الارتداء -->
-    <section class="diagram-section" style="background-color: #f7f5f0; padding: 50px 20px; text-align: center;">
-        <h2 data-ar="فلسفة التغيير والتصميم التفاعلي" data-en="Modular Design & Wear Options">فلسفة التغيير والتصميم التفاعلي</h2>
-        <p style="margin-bottom: 25px; color: #555;" data-ar="كيف تتحول القطعة الواحدة لتناسب مختلف إطلالاتكِ اليومية والرسمية" data-en="How a single modular piece adapts to your everyday look">كيف تتحول القطعة الواحدة لتناسب مختلف إطلالاتكِ اليومية والرسمية</p>
-        <div class="img-container" style="max-width: 850px; margin: 0 auto;">
-            <img src="wear-options-diagram.png.jpg" alt="رسم توضيحي لخيارات الارتداء - فلسفة التغيير والتصميم التفاعلي" style="width: 100%; border-radius: 12px; box-shadow: 0 5px 20px rgba(0,0,0,0.08);">
-        </div>
-    </section>
-
-    <!-- قسم قائمة الانتظار / الطلب المسبق -->
+    <!-- قسم الطلب المسبق -->
     <section id="order">
         <div class="waitlist">
-            <h2 id="waitlist-title" data-ar="كوني أول من يمتلك قطعة من تليد" data-en="Be First to Own a Piece of Taleed">كوني أول من يمتلك قطعة من تليد</h2>
-            <p id="waitlist-desc" data-ar="سجلي بياناتكِ لنضمكِ في قائمة الإصدار المحدود ولنخبركِ فور توفر العينات الأولى." data-en="Join our limited release waitlist for early access.">سجلي بياناتكِ لنضمكِ في قائمة الإصدار المحدود ولنخبركِ فور توفر العينات الأولى.</p>
+            <h2>كوني أول من يمتلك قطعة من تليد</h2>
+            <p>سجلي بياناتك لنضمك في قائمة الإصدار المحدود ولنخبرك فور توفر العينات الأولى.</p>
             <form onsubmit="handleFormSubmit(event)">
                 <input type="text" id="nameInput" placeholder="الاسم الكريم" required>
                 <input type="email" id="emailInput" placeholder="البريد الإلكتروني أو رقم الجوال" required>
-                <button type="submit" class="btn" id="btn-submit" style="background-color: #D4AF37; color: #2C3E35;" data-ar="سجلي اهتمامكِ" data-en="Join Waitlist">سجلي اهتمامكِ</button>
+                <button type="submit" class="btn" style="background-color: #D4AF37; color: #2C3E35;">سجلي اهتمامك</button>
             </form>
         </div>
     </section>
 
-    <!-- الفوتر -->
     <footer>
-        <p id="footer-text" data-ar="&copy; 2026 تليد (Taleed). جميع الحقوق محفوظة." data-en="&copy; 2026 Taleed Jewelry. All Rights Reserved.">&copy; 2026 تليد (Taleed). جميع الحقوق محفوظة.</p>
+        <p>&copy; 2026 تليد (Taleed). جميع الحقوق محفوظة.</p>
     </footer>
 
-    <!-- ربط ملف الـ JavaScript الخارجي والوظائف -->
     <script src="script.js"></script>
-    <script>
-        function switchWearOption(side) {
-            const imgElement = document.getElementById('modularPendantImg');
-            const buttons = document.querySelectorAll('.modular-toggle-container .toggle-btn');
-            
-            if (side === 'side1') {
-                imgElement.src = 'rawashin-interactive.png.jpg';
-                buttons[0].style.backgroundColor = '#2c3e35';
-                buttons[0].style.color = '#d4af37';
-                buttons[1].style.backgroundColor = 'transparent';
-                buttons[1].style.color = '#2c3e35';
-            } else if (side === 'side2') {
-                imgElement.src = 'natural-core-collection.png.jpg'; 
-                buttons[1].style.backgroundColor = '#2c3e35';
-                buttons[1].style.color = '#d4af37';
-                buttons[0].style.backgroundColor = 'transparent';
-                buttons[0].style.color = '#2c3e35';
-            }
-        }
-    </script>
 </body>
 </html>
