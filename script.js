@@ -170,4 +170,4 @@ function switchWearOption(side) {
         buttons[0].classList.remove('active');
     }
 }
->>>>>>> a08150c (إضافة صفحة القصة الصوتية)
+
