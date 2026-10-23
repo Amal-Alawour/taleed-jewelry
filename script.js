@@ -1,4 +1,4 @@
-<<<<<<< HEAD
+
 // دالة لتأكيد استقبال طلب الانضمام لقائمة الانتظار
 function handleFormSubmit(event) {
     event.preventDefault(); // منع إعادة تحميل الصفحة
@@ -84,7 +84,7 @@ function switchWearOption(side) {
         buttons[0].classList.remove('active');
     }
 }
-=======
+
 // دالة لتأكيد استقبال طلب الانضمام لقائمة الانتظار
 function handleFormSubmit(event) {
     event.preventDefault(); // منع إعادة تحميل الصفحة
