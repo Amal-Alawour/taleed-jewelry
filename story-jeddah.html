@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>تليد | صوت المكان — إصدار جدة</title>
-    <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@300;400;500;700&family=Amiri:wght@400;700&display=swap" rel="stylesheet">
     <style>
         * {
             box-sizing: border-box;
@@ -13,36 +13,37 @@
             font-family: 'Tajawal', sans-serif;
         }
         body {
-            background-color: #0E1A14; /* خلفية داكنة فاخرة باللون الأخضر الزيتي */
+            background-color: #0E1A14; /* الأخضر الزيتي الداكن الفاخر */
             color: #F4F1EA;
             display: flex;
             justify-content: center;
             align-items: center;
             min-height: 100vh;
-            padding: 20px;
+            padding: 40px 15px;
             text-align: center;
         }
         .container {
-            max-width: 450px;
+            max-width: 480px;
             width: 100%;
-            background: rgba(255, 255, 255, 0.03);
+            background: rgba(255, 255, 255, 0.02);
             border: 1px solid #D4AF37;
-            padding: 40px 25px;
-            border-radius: 16px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
-            backdrop-filter: blur(10px);
+            padding: 35px 22px;
+            border-radius: 20px;
+            box-shadow: 0 15px 35px rgba(0,0,0,0.6);
+            backdrop-filter: blur(12px);
         }
         .logo {
-            font-size: 28px;
+            font-size: 30px;
             font-weight: 700;
             color: #D4AF37;
             letter-spacing: 2px;
-            margin-bottom: 8px;
+            margin-bottom: 6px;
+            font-family: 'Amiri', serif;
         }
         .subtitle {
             font-size: 14px;
             color: #A3B19B;
-            margin-bottom: 30px;
+            margin-bottom: 20px;
             letter-spacing: 1px;
         }
         .coordinates {
@@ -50,39 +51,91 @@
             color: #D4AF37;
             border: 1px solid rgba(212, 175, 55, 0.3);
             display: inline-block;
-            padding: 4px 12px;
+            padding: 5px 15px;
             border-radius: 20px;
             margin-bottom: 25px;
+            background: rgba(212, 175, 55, 0.05);
         }
         .story-text {
-            font-size: 16px;
+            font-size: 15px;
             line-height: 1.8;
             color: #E2E8E4;
-            margin-bottom: 30px;
+            margin-bottom: 25px;
             font-weight: 300;
         }
         .audio-player {
             width: 100%;
-            margin-top: 15px;
+            margin-top: 5px;
+            margin-bottom: 30px;
             border-radius: 30px;
             outline: none;
         }
         audio::-webkit-media-controls-panel {
             background-color: #D4AF37;
         }
+
+        /* قسم عرض البطاقة مدمج بفخامة */
+        .story-card-section {
+            margin: 30px 0 20px 0;
+            padding-top: 25px;
+            border-top: 1px dashed rgba(212, 175, 55, 0.3);
+        }
+        .card-title {
+            font-family: 'Amiri', serif;
+            color: #D4AF37;
+            margin-bottom: 20px;
+            font-size: 20px;
+            letter-spacing: 0.5px;
+        }
+        .cards-wrapper {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+            align-items: center;
+        }
+        .card-item {
+            background: rgba(253, 251, 247, 0.05); /* خلفية شفافة فاخرة تندمج مع البطاقة */
+            padding: 12px;
+            border-radius: 14px;
+            border: 1px solid rgba(212, 175, 55, 0.4);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
+            width: 100%;
+            transition: transform 0.3s ease;
+        }
+        .card-item:hover {
+            transform: translateY(-3px);
+            border-color: #D4AF37;
+        }
+        .card-item img {
+            width: 100%;
+            height: auto;
+            border-radius: 8px;
+            display: block;
+        }
+        .card-label {
+            margin-top: 10px;
+            font-size: 13px;
+            color: #D4AF37;
+            font-weight: 500;
+        }
+
         .footer-note {
-            margin-top: 35px;
+            margin-top: 25px;
             font-size: 12px;
             color: #7A8B80;
         }
         .btn-back {
             display: inline-block;
-            margin-top: 25px;
+            margin-top: 18px;
             color: #D4AF37;
             text-decoration: none;
             font-size: 14px;
             border-bottom: 1px solid #D4AF37;
             padding-bottom: 2px;
+            transition: opacity 0.2s;
+        }
+        .btn-back:hover {
+            opacity: 0.8;
         }
     </style>
 </head>
@@ -98,37 +151,35 @@
             "هنا جدة.. حيث يعانق أثير البحر ظل الرواشين العتيقة. من انحناءة نواة التمر ونسمات الحواري القديمة، نُسجت هذه القطعة لتكون لكِ أثراً عريقاً ينبض بالهوية."
         </p>
 
-        <!-- مشغل الصوت: استبدلي audio-jeddah.mp3 باسم ملف الصوت الخاص بكِ -->
+        <!-- مشغل الصوت -->
         <audio controls class="audio-player">
             <source src="audio-jeddah.mp3" type="audio/mpeg">
             متصفحك لا يدعم تشغيل المقطع الصوتي.
         </audio>
 
+        <!-- قسم بطاقات القصة المدمجة -->
+        <div class="story-card-section">
+            <h3 class="card-title">بطاقة أثر القطعة | Story Card</h3>
+            
+            <div class="cards-wrapper">
+                <!-- الوجه الأمامي -->
+                <div class="card-item">
+                    <img src="images/card-front.png" alt="بطاقة تليد - الوجه الأمامي">
+                    <p class="card-label">الوجه الأمامي</p>
+                </div>
+
+                <!-- الوجه الخلفي مع QR Code -->
+                <div class="card-item">
+                    <img src="images/card-back.png" alt="بطاقة تليد - الوجه الخلفي والرمز التفاعلي">
+                    <p class="card-label">الوجه الخلفي (مسح الرمز الصوتي)</p>
+                </div>
+            </div>
+        </div>
+
         <p class="footer-note">الإصدار الأول: JED-001 (نواة جدة)</p>
         
         <a href="index.html" class="btn-back">العودة للرئيسية</a>
     </div>
-<!-- قسم عرض بطاقات القصة -->
-<section class="story-card-section" style="padding: 40px 20px; text-align: center; background-color: #FDFBF7;">
-  <h2 style="font-family: 'Amiri', serif; color: #1B263B; margin-bottom: 25px; font-size: 28px;">
-    بطاقة أثر القطعة | Story Card
-  </h2>
-  
-  <div class="cards-wrapper" style="display: flex; justify-content: center; gap: 30px; flex-wrap: wrap; align-items: center; max-width: 900px; margin: 0 auto;">
-    
-    <!-- الوجه الأمامي -->
-    <div class="card-item" style="background: #ffffff; padding: 12px; border-radius: 12px; box-shadow: 0 4px 15px rgba(0,0,0,0.06); border: 1px solid #E5E0D8; max-width: 380px; width: 100%;">
-      <img src="images/card-front.png" alt="بطاقة تليد - الوجه الأمامي" style="width: 100%; height: auto; border-radius: 8px; display: block;">
-      <p style="margin-top: 10px; font-size: 14px; color: #C5A059; font-weight: bold;">الوجه الأمامي</p>
-    </div>
 
-    <!-- الوجه الخلفي -->
-    <div class="card-item" style="background: #ffffff; padding: 12px; border-radius: 12px; box-shadow: 0 4px 15px rgba(0,0,0,0.06); border: 1px solid #E5E0D8; max-width: 380px; width: 100%;">
-      <img src="images/card-back.png" alt="بطاقة تليد - الوجه الخلفي والرمز التفاعلي" style="width: 100%; height: auto; border-radius: 8px; display: block;">
-      <p style="margin-top: 10px; font-size: 14px; color: #C5A059; font-weight: bold;">الوجه الخلفي (مسح الرمز الصوتي)</p>
-    </div>
-
-  </div>
-</section>
 </body>
 </html>
