@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl" id="htmlRoot">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title id="pageTitle">عن تليد | أصالة التراث بأناقة معاصرة</title>
+    <!-- استيراد الخطوط والأيقونات -->
+    <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@300;400;500;700&family=Amiri:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .about-hero {
+            background: linear-gradient(rgba(14, 26, 20, 0.75), rgba(14, 26, 20, 0.85)), url('talid-collection.png') center/cover no-repeat;
+            padding: 100px 20px;
+            text-align: center;
+            color: #F4F1EA;
+            border-bottom: 1px solid #D4AF37;
+        }
+        .about-hero h1 {
+            font-family: 'Amiri', serif;
+            color: #D4AF37;
+            font-size: 38px;
+            margin-bottom: 15px;
+        }
+        .about-hero p {
+            font-size: 18px;
+            max-width: 650px;
+            margin: 0 auto;
+            color: #E2E8E4;
+            line-height: 1.8;
+        }
+        .about-section {
+            padding: 70px 20px;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+        .story-block {
+            display: flex;
+            align-items: center;
+            gap: 40px;
+            margin-bottom: 60px;
+            flex-wrap: wrap;
+        }
+        .story-block:nth-child(even) {
+            flex-direction: row-reverse;
+        }
+        .story-text {
+            flex: 1;
+            min-width: 300px;
+        }
+        .story-text h2 {
+            font-family: 'Amiri', serif;
+            color: #2C3E35;
+            font-size: 28px;
+            margin-bottom: 15px;
+            border-bottom: 2px solid #D4AF37;
+            display: inline-block;
+            padding-bottom: 5px;
+        }
+        .story-text p {
+            color: #4A5568;
+            line-height: 1.9;
+            font-size: 15px;
+        }
+        .story-img {
+            flex: 1;
+            min-width: 280px;
+            border-radius: 12px;
+            overflow: hidden;
+            border: 1px solid #D4AF37;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+        }
+        .story-img img {
+            width: 100%;
+            height: auto;
+            display: block;
+            transition: transform 0.5s ease;
+        }
+        .story-img:hover img {
+            transform: scale(1.03);
+        }
+        .passport-highlight {
+            background-color: #0E1A14;
+            color: #F4F1EA;
+            padding: 50px 30px;
+            border-radius: 16px;
+            border: 1px solid #D4AF37;
+            text-align: center;
+            margin-top: 40px;
+        }
+        .passport-highlight h3 {
+            font-family: 'Amiri', serif;
+            color: #D4AF37;
+            font-size: 26px;
+            margin-bottom: 15px;
+        }
+        .back-nav-btn {
+            color: #D4AF37;
+            text-decoration: none;
+            font-size: 14px;
+            font-weight: bold;
+            margin-left: 15px;
+            margin-right: 15px;
+            display: inline-flex;
+            align-items: center;
+            gap: 5px;
+        }
+    </style>
+</head>
+<body id="top">
+
+    <!-- شريط الإهداء والحصرية -->
+    <div style="background-color: #1b2822; color: #d4af37; font-size: 12px; text-align: center; padding: 8px; font-weight: 500;">
+        <span data-ar="إصدارات محدودة ببطاقات حكاية وجواز أثر ثقافي مترجم مع كل قطعة" data-en="Limited editions with story cards and a translated cultural impact passport with every piece">
+            إصدارات محدودة ببطاقات حكاية وجواز أثر ثقافي مترجم مع كل قطعة
+        </span>
+    </div>
+
+    <!-- الهيدر -->
+    <header>
+        <h1><a href="index.html" style="color: inherit; text-decoration: none;">تَلِيد | TALEED</a></h1>
+        <div class="header-right">
+            <nav style="display: inline-block;">
+                <!-- زر العودة للرئيسية في الهيدر -->
+                <a href="index.html" class="back-nav-btn">
+                    <i class="fas fa-home"></i>
+                    <span data-ar="الرئيسية" data-en="Home">الرئيسية</span>
+                </a>
+            </nav>
+            <div class="lang-selector">
+                <select id="langSelect" onchange="changeLanguage(this.value)">
+                    <option value="ar" selected>العربية</option>
+                    <option value="en">English</option>
+                </select>
+            </div>
+            <a href="index.html#products" class="btn" data-ar="استكشفي المجموعات" data-en="Explore Collections">استكشفي المجموعات</a>
+        </div>
+    </header>
+
+    <!-- قسم الهيرو في صفحة عن تليد -->
+    <section class="about-hero">
+        <h1 data-ar="حكاية تليد.. حيث ينبض التراث بالحياة" data-en="The Story of Taleed.. Where Heritage Comes Alive">حكاية تليد.. حيث ينبض التراث بالحياة</h1>
+        <p data-ar="نحن لا نصنع مجرد مجوهرات فاخرة، بل نسرد تاريخاً عريقاً ونوثق أثراً ثقافياً يُلبس ويُحس ويُحكى." data-en="We don't just create fine jewelry; we tell rich histories and document a cultural legacy to be worn, felt, and passed down.">
+            نحن لا نصنع مجرد مجوهرات فاخرة، بل نسرد تاريخاً عريقاً ونوثق أثراً ثقافياً يُلبس ويُحس ويُحكى.
+        </p>
+    </section>
+
+    <!-- المحتوى الرئيسي لقصة البراند -->
+    <section class="about-section">
+        
+        <!-- القصة الأولى: الفلسفة والاسم -->
+        <div class="story-block">
+            <div class="story-text">
+                <h2 data-ar="فلسفتنا والاسم" data-en="Our Philosophy & Name">فلسفتنا والاسم</h2>
+                <p data-ar="كلمة &quot;تَلِيد&quot; في اللغة العربية تعني المجد الموروث والأصل العريق المكتسب كابراً عن كابر. انطلقت علامتنا من قلب المملكة العربية السعودية لتعيد صياغة رموز التراث والبيئة المحلية بأسلوب عصري يواكب تطلعات المرأة العالمية. نؤمن بأن القطعة الفاخرة يجب أن تمنحك الأصالة والأناقة دون المساومة على البساطة والجمال." 
+                   data-en="The Arabic word &quot;Taleed&quot; signifies deep-rooted, inherited legacy and nobility. Born from the heart of Saudi Arabia, our brand reimagines traditional elements into modern luxury for the global woman, believing true elegance seamlessly blends heritage with contemporary minimalism.">
+                    كلمة "تَلِيد" في اللغة العربية تعني المجد الموروث والأصل العريق المكتسب كابراً عن كابر. انطلقت علامتنا من قلب المملكة العربية السعودية لتعيد صياغة رموز التراث والبيئة المحلية بأسلوب عصري يواكب تطلعات المرأة العالمية. نؤمن بأن القطعة الفاخرة يجب أن تمنحك الأصالة والأناقة دون المساومة على البساطة والجمال.
+                </p>
+            </div>
+            <div class="story-img">
+                <img src="jed-001.png" alt="قلادة تليد">
+            </div>
+        </div>
+
+        <!-- القصة الثانية: الهام الطبيعة والعمارة -->
+        <div class="story-block">
+            <div class="story-text">
+                <h2 data-ar="إلهام الطبيعة والرواشين" data-en="Inspiration: Nature & Rawasheen">إلهام الطبيعة والرواشين</h2>
+                <p data-ar="تستمد تصاميمنا خطوطها من انحناءات نواة التمر الدقيقة، وظلال الرواشين الحجازية الخشبية في جدة التاريخية، وأناقة أوراق السدر وطبيعة المملكة. يتم تحويل هذه التفاصيل المعمارية والطبيعية بدقة ثلاثية الأبعاد (3D Design) إلى قطع مجوهرات مطلية بالذهب الفاخر عيار 18، صُممت لتتداخل مع يومك وتمنحك خيارات ارتداء متعددة وتفاعلية." 
+                   data-en="Our designs draw lines from the contours of date pits, the intricate geometric shadows of Historic Jeddah's Hijazi Rawasheen, and the resilience of Sidr trees. Using precision 3D CAD modeling, these cultural elements are transformed into 18K gold-plated wearable art pieces with multi-functional wearing options.">
+                    تستمد تصاميمنا خطوطها من انحناءات نواة التمر الدقيقة، وظلال الرواشين الحجازية الخشبية في جدة التاريخية، وأناقة أوراق السدر وطبيعة المملكة. يتم تحويل هذه التفاصيل المعمارية والطبيعية بدقة ثلاثية الأبعاد (3D Design) إلى قطع مجوهرات مطلية بالذهب الفاخر عيار 18، صُممت لتتداخل مع يومك وتمنحك خيارات ارتداء متعددة وتفاعلية.
+                </p>
+            </div>
+            <div class="story-img">
+                <img src="rawashin-interactive.png.jpg" alt="تصميم الرواشين">
+            </div>
+        </div>
+
+        <!-- القصة الثالثة: جواز الأثر الثقافي -->
+        <div class="passport-highlight">
+            <h3 data-ar="جواز الأثر الثقافي | Cultural Impact Passport" data-en="Cultural Impact Passport">جواز الأثر الثقافي | Cultural Impact Passport</h3>
+            <p style="line-height: 1.8; color: #E2E8E4; font-size: 15px; margin-bottom: 20px;" 
+               data-ar="لأن كل قطعة من تليد هي وثيقة تاريخية حية، تأتي إصداراتنا المحدودة مرفقة بـ **جواز أثر ثقافي** مطبوع ورقمي. يتيح لك هذا الجواز مسح رمز تفاعلي (QR) خاص بالقطعة يفتح لك تسجيلات صوتية حصرية تشرح الإحداثيات الجغرافية والقصة الثقافية التي ألهمت صياغتها، لتكوني دائماً على صلة بروح المكان والأثر." 
+               data-en="Because every Taleed creation is a living historical document, our limited editions include a printed & digital Cultural Impact Passport. Scanning the private QR code grants you access to exclusive audio experiences sharing the geographic coordinates and cultural narrative behind your piece.">
+                لأن كل قطعة من تليد هي وثيقة تاريخية حية، تأتي إصداراتنا المحدودة مرفقة بـ <strong>جواز أثر ثقافي</strong> مطبوع ورقمي. يتيح لك هذا الجواز مسح رمز تفاعلي (QR) خاص بالقطعة يفتح لك تسجيلات صوتية حصرية تشرح الإحداثيات الجغرافية والقصة الثقافية التي ألهمت صياغتها، لتكوني دائماً على صلة بروح المكان والأثر.
+            </p>
+            <a href="index.html#order" class="btn" style="background-color: #D4AF37; color: #0E1A14; font-weight: bold;" data-ar="احجزي إرثكِ الخاص" data-en="Reserve Your Legacy">احجزي إرثكِ الخاص</a>
+        </div>
+
+        <!-- زر العودة الصريح للرئيسية أسفل المحتوى -->
+        <div style="text-align: center; margin-top: 50px;">
+            <a href="index.html" class="btn" style="background: transparent; border: 1px solid #D4AF37; color: #2C3E35;" data-ar="⟵ العودة للصفحة الرئيسية" data-en="⟶ Back to Home Page">⟵ العودة للصفحة الرئيسية</a>
+        </div>
+
+    </section>
+
+    <footer>
+        <p style="margin-bottom: 10px;">
+            <a href="index.html" style="color: #D4AF37; text-decoration: none; font-size: 13px;" data-ar="الرئيسية" data-en="Home">الرئيسية</a>
+        </p>
+        <p data-ar="&copy; 2026 تليد (Taleed). جميع الحقوق محفوظة." data-en="&copy; 2026 Taleed. All rights reserved.">&copy; 2026 تليد (Taleed). جميع الحقوق محفوظة.</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
