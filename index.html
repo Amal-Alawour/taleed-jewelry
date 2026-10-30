@@ -94,6 +94,9 @@
     <header>
         <h1><a href="#top" style="color: inherit; text-decoration: none;">تَلِيد | TALEED</a></h1>
         <div class="header-right">
+            <nav style="display: inline-block; margin-left: 15px; margin-right: 15px;">
+                <a href="about.html" style="color: #D4AF37; text-decoration: none; font-size: 14px; font-weight: 500;" data-ar="عن تليد" data-en="About Taleed">عن تليد</a>
+            </nav>
             <div class="lang-selector">
                 <select id="langSelect" onchange="changeLanguage(this.value)">
                     <option value="ar" selected>العربية</option>
@@ -109,6 +112,19 @@
         <h1 data-ar="حيث تلتقي الطبيعة بالتراث" data-en="Where Nature Meets Heritage">حيث تلتقي الطبيعة بالتراث</h1>
         <p data-ar="مجوهرات معاصرة مستوحاة من تفاصيل البيئة السعودية والهوية الثقافية، مصممة بلغة عالمية لتناسب يومك بكل أناقة." data-en="Contemporary jewelry inspired by the details of the Saudi environment and cultural identity, designed with a global language to suit your everyday elegance.">مجوهرات معاصرة مستوحاة من تفاصيل البيئة السعودية والهوية الثقافية، مصممة بلغة عالمية لتناسب يومك بكل أناقة.</p>
         <a href="#products" class="btn" data-ar="استكشفي المجموعات" data-en="Explore Collections">استكشفي المجموعات</a>
+    </section>
+
+    <!-- قسم نبذة تشويقية عن البراند -->
+    <section style="background-color: #0E1A14; color: #F4F1EA; padding: 50px 20px; text-align: center; border-bottom: 1px solid rgba(212, 175, 55, 0.3);">
+        <div style="max-width: 800px; margin: 0 auto;">
+            <h2 style="font-family: 'Amiri', serif; color: #D4AF37; font-size: 28px; margin-bottom: 15px;" data-ar="قصة تليد.. مجوهرات تروي أثراً" data-en="The Story of Taleed.. Jewelry Telling a Legacy">قصة تليد.. مجوهرات تروي أثراً</h2>
+            <p style="font-size: 15px; line-height: 1.9; color: #E2E8E4; margin-bottom: 25px;" 
+               data-ar="مستوحاة من انحناءات نواة التمر وجماليات الرواشين الحجازية، نعيد صياغة الإرث السعودي في قطع مجوهرات معاصرة مطلية بالذهب عيار 18، تُرفق مع كل منها بطاقة حكاية وجواز أثر ثقافي." 
+               data-en="Inspired by the curves of date pits and Hijazi Rawasheen aesthetics, we reimagine Saudi heritage in modern 18K gold-plated jewelry pieces, each accompanied by a story card and cultural passport.">
+                مستوحاة من انحناءات نواة التمر وجماليات الرواشين الحجازية، نعيد صياغة الإرث السعودي في قطع مجوهرات معاصرة مطلية بالذهب عيار 18، تُرفق مع كل منها بطاقة حكاية وجواز أثر ثقافي.
+            </p>
+            <a href="about.html" class="btn" style="background: transparent; border: 1px solid #D4AF37; color: #D4AF37;" data-ar="اقرأي قصتنا الكاملة ⟵" data-en="Read Our Full Story ⟶">اقرأي قصتنا الكاملة ⟵</a>
+        </div>
     </section>
 
     <!-- شريط المميزات -->
@@ -300,70 +316,13 @@
     </div>
 
     <footer>
+        <p style="margin-bottom: 10px;">
+            <a href="about.html" style="color: #D4AF37; text-decoration: none; font-size: 13px;" data-ar="عن تليد" data-en="About Taleed">عن تليد</a>
+        </p>
         <p data-ar="&copy; 2026 تليد (Taleed). جميع الحقوق محفوظة." data-en="&copy; 2026 Taleed. All rights reserved.">&copy; 2026 تليد (Taleed). جميع الحقوق محفوظة.</p>
     </footer>
 
-    <!-- البرمجة الخاصة بالنوافذ والتبديل بين اللغات -->
-    <script>
-        let currentLang = 'ar';
-        let activeModalData = { arTitle: '', enTitle: '', coords: '', arText: '', enText: '' };
-
-        function openStoryModal(arTitle, enTitle, coords, arText, enText) {
-            activeModalData = { arTitle, enTitle, coords, arText, enText };
-            updateModalContent();
-            document.getElementById('storyModal').style.display = 'flex';
-        }
-
-        function updateModalContent() {
-            document.getElementById('modalTitle').innerText = currentLang === 'en' ? activeModalData.enTitle : activeModalData.arTitle;
-            document.getElementById('modalCoords').innerText = activeModalData.coords;
-            document.getElementById('modalText').innerText = currentLang === 'en' ? activeModalData.enText : activeModalData.arText;
-        }
-
-        function closeStoryModal() {
-            document.getElementById('storyModal').style.display = 'none';
-        }
-
-        window.onclick = function(event) {
-            const modal = document.getElementById('storyModal');
-            if (event.target == modal) {
-                modal.style.display = "none";
-            }
-        }
-
-        // دالة تغيير اللغة ديناميكياً
-        function changeLanguage(lang) {
-            currentLang = lang;
-            const root = document.getElementById('htmlRoot');
-            root.setAttribute('lang', lang);
-            root.setAttribute('dir', lang === 'ar' ? 'rtl' : 'ltr');
-
-            // ترجمة العناصر التي تحمل السمات
-            const elements = document.querySelectorAll('[data-ar]');
-            elements.forEach(el => {
-                if (lang === 'en' && el.getAttribute('data-en')) {
-                    el.innerHTML = el.getAttribute('data-en');
-                } else if (lang === 'ar' && el.getAttribute('data-ar')) {
-                    el.innerHTML = el.getAttribute('data-ar');
-                }
-            });
-
-            // ترجمة حقول الإدخال (Placeholder)
-            const inputs = document.querySelectorAll('[data-ar-placeholder]');
-            inputs.forEach(input => {
-                if (lang === 'en' && input.getAttribute('data-en-placeholder')) {
-                    input.placeholder = input.getAttribute('data-en-placeholder');
-                } else if (lang === 'ar' && input.getAttribute('data-ar-placeholder')) {
-                    input.placeholder = input.getAttribute('data-ar-placeholder');
-                }
-            });
-
-            // تحديث محتوى النافذة المنبثقة إن كانت مفتوحة
-            if(document.getElementById('storyModal').style.display === 'flex') {
-                updateModalContent();
-            }
-        }
-    </script>
+    <!-- استدعاء ملف الجافاسكريبت الموحد -->
     <script src="script.js"></script>
 </body>
 </html>
