@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="robots" content="noindex, nofollow">
     <title>تليد | صوت المكان — إصدار جدة</title>
     <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@300;400;500;700&family=Amiri:wght@400;700&display=swap" rel="stylesheet">
     <style>
@@ -19,7 +20,7 @@
             justify-content: center;
             align-items: center;
             min-height: 100vh;
-            padding: 40px 15px;
+            padding: 30px 15px;
             text-align: center;
         }
         .container {
@@ -31,9 +32,23 @@
             border-radius: 20px;
             box-shadow: 0 15px 35px rgba(0,0,0,0.6);
             backdrop-filter: blur(12px);
+            position: relative;
+        }
+        .exclusive-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            background: rgba(212, 175, 55, 0.15);
+            color: #D4AF37;
+            border: 1px solid #D4AF37;
+            font-size: 11px;
+            padding: 4px 12px;
+            border-radius: 50px;
+            margin-bottom: 18px;
+            letter-spacing: 0.5px;
         }
         .logo {
-            font-size: 30px;
+            font-size: 32px;
             font-weight: 700;
             color: #D4AF37;
             letter-spacing: 2px;
@@ -43,7 +58,7 @@
         .subtitle {
             font-size: 14px;
             color: #A3B19B;
-            margin-bottom: 20px;
+            margin-bottom: 18px;
             letter-spacing: 1px;
         }
         .coordinates {
@@ -53,8 +68,9 @@
             display: inline-block;
             padding: 5px 15px;
             border-radius: 20px;
-            margin-bottom: 25px;
+            margin-bottom: 22px;
             background: rgba(212, 175, 55, 0.05);
+            direction: ltr;
         }
         .story-text {
             font-size: 15px;
@@ -63,20 +79,93 @@
             margin-bottom: 25px;
             font-weight: 300;
         }
-        .audio-player {
-            width: 100%;
-            margin-top: 5px;
-            margin-bottom: 30px;
-            border-radius: 30px;
-            outline: none;
+
+        /* --- مشغل صوت فاخر ومخصص --- */
+        .custom-audio-container {
+            background: rgba(212, 175, 55, 0.06);
+            border: 1px solid rgba(212, 175, 55, 0.3);
+            border-radius: 16px;
+            padding: 16px 20px;
+            margin-bottom: 25px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 15px;
         }
-        audio::-webkit-media-controls-panel {
+        .play-btn {
+            background: #D4AF37;
+            border: none;
+            width: 46px;
+            height: 46px;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 12px rgba(212, 175, 55, 0.3);
+            flex-shrink: 0;
+        }
+        .play-btn:hover {
+            transform: scale(1.05);
+            background: #e5c158;
+        }
+        .play-btn svg {
+            fill: #0E1A14;
+            width: 18px;
+            height: 18px;
+            margin-left: -2px; /* ضبط محاذاة سهم التشغيل */
+        }
+        .play-btn.playing svg {
+            margin-left: 0;
+        }
+        .audio-info {
+            flex-grow: 1;
+            text-align: right;
+        }
+        .audio-title {
+            font-size: 13px;
+            color: #D4AF37;
+            font-weight: 500;
+            margin-bottom: 4px;
+        }
+        .audio-timer {
+            font-size: 11px;
+            color: #A3B19B;
+            direction: ltr;
+            display: inline-block;
+        }
+        /* موجات صوتية تفاعلية */
+        .sound-wave {
+            display: flex;
+            align-items: center;
+            gap: 3px;
+            height: 18px;
+        }
+        .sound-wave span {
+            width: 3px;
+            height: 100%;
+            background-color: rgba(212, 175, 55, 0.4);
+            border-radius: 3px;
+            transition: height 0.2s ease;
+        }
+        .sound-wave.active span {
             background-color: #D4AF37;
+            animation: wave 1.2s infinite ease-in-out alternate;
+        }
+        .sound-wave.active span:nth-child(1) { animation-delay: 0.1s; }
+        .sound-wave.active span:nth-child(2) { animation-delay: 0.3s; }
+        .sound-wave.active span:nth-child(3) { animation-delay: 0.2s; }
+        .sound-wave.active span:nth-child(4) { animation-delay: 0.4s; }
+
+        @keyframes wave {
+            0% { height: 4px; }
+            100% { height: 18px; }
         }
 
-        /* قسم عرض البطاقة مدمج بفخامة */
+        /* --- قسم عرض البطاقة --- */
         .story-card-section {
-            margin: 30px 0 20px 0;
+            margin: 25px 0 20px 0;
             padding-top: 25px;
             border-top: 1px dashed rgba(212, 175, 55, 0.3);
         }
@@ -94,13 +183,13 @@
             align-items: center;
         }
         .card-item {
-            background: rgba(253, 251, 247, 0.05); /* خلفية شفافة فاخرة تندمج مع البطاقة */
+            background: rgba(253, 251, 247, 0.03);
             padding: 12px;
             border-radius: 14px;
-            border: 1px solid rgba(212, 175, 55, 0.4);
+            border: 1px solid rgba(212, 175, 55, 0.3);
             box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
             width: 100%;
-            transition: transform 0.3s ease;
+            transition: transform 0.3s ease, border-color 0.3s ease;
         }
         .card-item:hover {
             transform: translateY(-3px);
@@ -129,7 +218,7 @@
             margin-top: 18px;
             color: #D4AF37;
             text-decoration: none;
-            font-size: 14px;
+            font-size: 13px;
             border-bottom: 1px solid #D4AF37;
             padding-bottom: 2px;
             transition: opacity 0.2s;
@@ -142,6 +231,11 @@
 <body>
 
     <div class="container">
+        <!-- وسام الحصرية للعميل -->
+        <div class="exclusive-badge">
+            <span>✨</span> تجربة خاصة بمقتني القطعة
+        </div>
+
         <div class="logo">تَلِيد | TALEED</div>
         <div class="subtitle">قصص المكان — إصدار جدة</div>
         
@@ -151,11 +245,29 @@
             "هنا جدة.. حيث يعانق أثير البحر ظل الرواشين العتيقة. من انحناءة نواة التمر ونسمات الحواري القديمة، نُسجت هذه القطعة لتكون لكِ أثراً عريقاً ينبض بالهوية."
         </p>
 
-        <!-- مشغل الصوت -->
-        <audio controls class="audio-player">
-            <source src="audio-jeddah.mp3" type="audio/mpeg">
-            متصفحك لا يدعم تشغيل المقطع الصوتي.
-        </audio>
+        <!-- مشغل الصوت الفاخر التفاعلي -->
+        <div class="custom-audio-container">
+            <button class="play-btn" id="playBtn" onclick="toggleAudio()" aria-label="تشغيل الصوت">
+                <!-- أيقونة التشغيل الافتراضية -->
+                <svg id="playIcon" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+            </button>
+            
+            <div class="audio-info">
+                <div class="audio-title">صوت أثير جدة</div>
+                <div class="audio-timer" id="audioTimer">00:00 / 00:18</div>
+            </div>
+
+            <!-- موجات صوتية تتفاعل عند التشغيل -->
+            <div class="sound-wave" id="soundWave">
+                <span></span><span></span><span></span><span></span>
+            </div>
+
+            <!-- عنصر الصوت المخفي الذي يتم التحكم به بالجافاسكريبت -->
+            <audio id="taleedAudio">
+                <source src="audio-jeddah.mp3?v=2" type="audio/mpeg">
+                متصفحك لا يدعم تشغيل المقطع الصوتي.
+            </audio>
+        </div>
 
         <!-- قسم بطاقات القصة المدمجة -->
         <div class="story-card-section">
@@ -181,5 +293,47 @@
         <a href="index.html" class="btn-back">العودة للرئيسية</a>
     </div>
 
+    <!-- برمجة التحكم في الصوت والمؤثرات -->
+    <script>
+        const audio = document.getElementById('taleedAudio');
+        const playBtn = document.getElementById('playBtn');
+        const playIcon = document.getElementById('playIcon');
+        const soundWave = document.getElementById('soundWave');
+        const audioTimer = document.getElementById('audioTimer');
+
+        function toggleAudio() {
+            if (audio.paused) {
+                audio.play();
+                playIcon.innerHTML = '<path d="M6 19h4V5H6v14zm8-14v14h4V5h-4z"/>'; // أيقونة الإيقاف المؤقت
+                playBtn.classList.add('playing');
+                soundWave.classList.add('active');
+            } else {
+                audio.pause();
+                playIcon.innerHTML = '<path d="M8 5v14l11-7z"/>'; // أيقونة التشغيل
+                playBtn.classList.remove('playing');
+                soundWave.classList.remove('active');
+            }
+        }
+
+        // تحديث العداد والموجات الصوتية عند انتهاء المقطع
+        audio.addEventListener('ended', () => {
+            playIcon.innerHTML = '<path d="M8 5v14l11-7z"/>';
+            playBtn.classList.remove('playing');
+            soundWave.classList.remove('active');
+        });
+
+        // تحديث العداد الزمني بالثواني
+        audio.addEventListener('timeupdate', () => {
+            const current = formatTime(audio.currentTime);
+            const duration = isNaN(audio.duration) ? '00:18' : formatTime(audio.duration);
+            audioTimer.innerText = `${current} / ${duration}`;
+        });
+
+        function formatTime(seconds) {
+            const mins = Math.floor(seconds / 60);
+            const secs = Math.floor(seconds % 60);
+            return `${mins < 10 ? '0' : ''}${mins}:${secs < 10 ? '0' : ''}${secs}`;
+        }
+    </script>
 </body>
 </html>
