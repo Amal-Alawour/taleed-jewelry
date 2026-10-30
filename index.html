@@ -1,339 +1,369 @@
 <!DOCTYPE html>
-<html lang="ar" dir="rtl">
+<html lang="ar" dir="rtl" id="htmlRoot">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="robots" content="noindex, nofollow">
-    <title>تليد | صوت المكان — إصدار جدة</title>
+    <title id="pageTitle">تليد | مجوهرات معاصرة مستوحاة من التراث</title>
+    <!-- استيراد الخطوط والأيقونات -->
     <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@300;400;500;700&family=Amiri:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
     <style>
-        * {
-            box-sizing: border-box;
-            margin: 0;
-            padding: 0;
-            font-family: 'Tajawal', sans-serif;
-        }
-        body {
-            background-color: #0E1A14; /* الأخضر الزيتي الداكن الفاخر */
-            color: #F4F1EA;
-            display: flex;
+        .story-modal {
+            display: none;
+            position: fixed;
+            top: 0; left: 0; width: 100%; height: 100%;
+            background: rgba(14, 26, 20, 0.85);
+            backdrop-filter: blur(8px);
+            z-index: 1000;
             justify-content: center;
             align-items: center;
-            min-height: 100vh;
-            padding: 30px 15px;
-            text-align: center;
+            padding: 20px;
         }
-        .container {
-            max-width: 480px;
-            width: 100%;
-            background: rgba(255, 255, 255, 0.02);
+        .story-modal-content {
+            background: #0E1A14;
             border: 1px solid #D4AF37;
-            padding: 35px 22px;
-            border-radius: 20px;
-            box-shadow: 0 15px 35px rgba(0,0,0,0.6);
-            backdrop-filter: blur(12px);
+            border-radius: 16px;
+            max-width: 450px;
+            width: 100%;
+            padding: 30px 25px;
+            text-align: center;
+            color: #F4F1EA;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.8);
             position: relative;
         }
-        .exclusive-badge {
-            display: inline-flex;
-            align-items: center;
-            gap: 6px;
+        .modal-close {
+            position: absolute;
+            top: 15px; left: 15px;
+            color: #D4AF37;
+            font-size: 20px;
+            cursor: pointer;
+        }
+        .modal-title {
+            font-family: 'Amiri', serif;
+            color: #D4AF37;
+            font-size: 22px;
+            margin-bottom: 10px;
+        }
+        .modal-coords {
+            font-size: 11px;
+            color: #D4AF37;
+            border: 1px solid rgba(212, 175, 55, 0.4);
+            display: inline-block;
+            padding: 3px 12px;
+            border-radius: 15px;
+            margin-bottom: 15px;
+            direction: ltr;
+        }
+        .modal-text {
+            font-size: 14px;
+            line-height: 1.8;
+            color: #E2E8E4;
+            margin-bottom: 20px;
+        }
+        .experience-teaser {
+            background: linear-gradient(135deg, #0E1A14 0%, #1b2822 100%);
+            border-top: 1px solid #D4AF37;
+            border-bottom: 1px solid #D4AF37;
+            color: #F4F1EA;
+            padding: 50px 20px;
+            text-align: center;
+        }
+        .teaser-badge {
             background: rgba(212, 175, 55, 0.15);
             color: #D4AF37;
             border: 1px solid #D4AF37;
-            font-size: 11px;
-            padding: 4px 12px;
+            font-size: 12px;
+            padding: 4px 15px;
             border-radius: 50px;
-            margin-bottom: 18px;
-            letter-spacing: 0.5px;
-        }
-        .logo {
-            font-size: 32px;
-            font-weight: 700;
-            color: #D4AF37;
-            letter-spacing: 2px;
-            margin-bottom: 6px;
-            font-family: 'Amiri', serif;
-        }
-        .subtitle {
-            font-size: 14px;
-            color: #A3B19B;
-            margin-bottom: 18px;
-            letter-spacing: 1px;
-        }
-        .coordinates {
-            font-size: 12px;
-            color: #D4AF37;
-            border: 1px solid rgba(212, 175, 55, 0.3);
             display: inline-block;
-            padding: 5px 15px;
-            border-radius: 20px;
-            margin-bottom: 22px;
-            background: rgba(212, 175, 55, 0.05);
-            direction: ltr;
-        }
-        .story-text {
-            font-size: 15px;
-            line-height: 1.8;
-            color: #E2E8E4;
-            margin-bottom: 25px;
-            font-weight: 300;
-        }
-
-        /* --- مشغل صوت فاخر ومخصص --- */
-        .custom-audio-container {
-            background: rgba(212, 175, 55, 0.06);
-            border: 1px solid rgba(212, 175, 55, 0.3);
-            border-radius: 16px;
-            padding: 16px 20px;
-            margin-bottom: 25px;
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            gap: 15px;
-        }
-        .play-btn {
-            background: #D4AF37;
-            border: none;
-            width: 46px;
-            height: 46px;
-            border-radius: 50%;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            cursor: pointer;
-            transition: all 0.3s ease;
-            box-shadow: 0 4px 12px rgba(212, 175, 55, 0.3);
-            flex-shrink: 0;
-        }
-        .play-btn:hover {
-            transform: scale(1.05);
-            background: #e5c158;
-        }
-        .play-btn svg {
-            fill: #0E1A14;
-            width: 18px;
-            height: 18px;
-            margin-left: -2px; /* ضبط محاذاة سهم التشغيل */
-        }
-        .play-btn.playing svg {
-            margin-left: 0;
-        }
-        .audio-info {
-            flex-grow: 1;
-            text-align: right;
-        }
-        .audio-title {
-            font-size: 13px;
-            color: #D4AF37;
-            font-weight: 500;
-            margin-bottom: 4px;
-        }
-        .audio-timer {
-            font-size: 11px;
-            color: #A3B19B;
-            direction: ltr;
-            display: inline-block;
-        }
-        /* موجات صوتية تفاعلية */
-        .sound-wave {
-            display: flex;
-            align-items: center;
-            gap: 3px;
-            height: 18px;
-        }
-        .sound-wave span {
-            width: 3px;
-            height: 100%;
-            background-color: rgba(212, 175, 55, 0.4);
-            border-radius: 3px;
-            transition: height 0.2s ease;
-        }
-        .sound-wave.active span {
-            background-color: #D4AF37;
-            animation: wave 1.2s infinite ease-in-out alternate;
-        }
-        .sound-wave.active span:nth-child(1) { animation-delay: 0.1s; }
-        .sound-wave.active span:nth-child(2) { animation-delay: 0.3s; }
-        .sound-wave.active span:nth-child(3) { animation-delay: 0.2s; }
-        .sound-wave.active span:nth-child(4) { animation-delay: 0.4s; }
-
-        @keyframes wave {
-            0% { height: 4px; }
-            100% { height: 18px; }
-        }
-
-        /* --- قسم عرض البطاقة --- */
-        .story-card-section {
-            margin: 25px 0 20px 0;
-            padding-top: 25px;
-            border-top: 1px dashed rgba(212, 175, 55, 0.3);
-        }
-        .card-title {
-            font-family: 'Amiri', serif;
-            color: #D4AF37;
-            margin-bottom: 20px;
-            font-size: 20px;
-            letter-spacing: 0.5px;
-        }
-        .cards-wrapper {
-            display: flex;
-            flex-direction: column;
-            gap: 20px;
-            align-items: center;
-        }
-        .card-item {
-            background: rgba(253, 251, 247, 0.03);
-            padding: 12px;
-            border-radius: 14px;
-            border: 1px solid rgba(212, 175, 55, 0.3);
-            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
-            width: 100%;
-            transition: transform 0.3s ease, border-color 0.3s ease;
-        }
-        .card-item:hover {
-            transform: translateY(-3px);
-            border-color: #D4AF37;
-        }
-        .card-item img {
-            width: 100%;
-            height: auto;
-            border-radius: 8px;
-            display: block;
-        }
-        .card-label {
-            margin-top: 10px;
-            font-size: 13px;
-            color: #D4AF37;
-            font-weight: 500;
-        }
-
-        .footer-note {
-            margin-top: 25px;
-            font-size: 12px;
-            color: #7A8B80;
-        }
-        .btn-back {
-            display: inline-block;
-            margin-top: 18px;
-            color: #D4AF37;
-            text-decoration: none;
-            font-size: 13px;
-            border-bottom: 1px solid #D4AF37;
-            padding-bottom: 2px;
-            transition: opacity 0.2s;
-        }
-        .btn-back:hover {
-            opacity: 0.8;
+            margin-bottom: 15px;
         }
     </style>
 </head>
-<body>
+<body id="top">
 
-    <div class="container">
-        <!-- وسام الحصرية للعميل -->
-        <div class="exclusive-badge">
-            <span>✨</span> تجربة خاصة بمقتني القطعة
-        </div>
-
-        <div class="logo">تَلِيد | TALEED</div>
-        <div class="subtitle">قصص المكان — إصدار جدة</div>
-        
-        <div class="coordinates">📍 21.5433° N, 39.1728° E</div>
-
-        <p class="story-text">
-            "هنا جدة.. حيث يعانق أثير البحر ظل الرواشين العتيقة. من انحناءة نواة التمر ونسمات الحواري القديمة، نُسجت هذه القطعة لتكون لكِ أثراً عريقاً ينبض بالهوية."
-        </p>
-
-        <!-- مشغل الصوت الفاخر التفاعلي -->
-        <div class="custom-audio-container">
-            <button class="play-btn" id="playBtn" onclick="toggleAudio()" aria-label="تشغيل الصوت">
-                <!-- أيقونة التشغيل الافتراضية -->
-                <svg id="playIcon" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
-            </button>
-            
-            <div class="audio-info">
-                <div class="audio-title">صوت أثير جدة</div>
-                <div class="audio-timer" id="audioTimer">00:00 / 00:18</div>
-            </div>
-
-            <!-- موجات صوتية تتفاعل عند التشغيل -->
-            <div class="sound-wave" id="soundWave">
-                <span></span><span></span><span></span><span></span>
-            </div>
-
-            <!-- عنصر الصوت المخفي الذي يتم التحكم به بالجافاسكريبت -->
-            <audio id="taleedAudio">
-                <source src="audio-jeddah.mp3?v=2" type="audio/mpeg">
-                متصفحك لا يدعم تشغيل المقطع الصوتي.
-            </audio>
-        </div>
-
-        <!-- قسم بطاقات القصة المدمجة -->
-        <div class="story-card-section">
-            <h3 class="card-title">بطاقة أثر القطعة | Story Card</h3>
-            
-            <div class="cards-wrapper">
-                <!-- الوجه الأمامي -->
-                <div class="card-item">
-                    <img src="images/card-front.png" alt="بطاقة تليد - الوجه الأمامي">
-                    <p class="card-label">الوجه الأمامي</p>
-                </div>
-
-                <!-- الوجه الخلفي مع QR Code -->
-                <div class="card-item">
-                    <img src="images/card-back.png" alt="بطاقة تليد - الوجه الخلفي والرمز التفاعلي">
-                    <p class="card-label">الوجه الخلفي (مسح الرمز الصوتي)</p>
-                </div>
-            </div>
-        </div>
-
-        <p class="footer-note">الإصدار الأول: JED-001 (نواة جدة)</p>
-        
-        <a href="index.html" class="btn-back">العودة للرئيسية</a>
+    <!-- شريط الإهداء والحصرية -->
+    <div style="background-color: #1b2822; color: #d4af37; font-size: 12px; text-align: center; padding: 8px; font-weight: 500;">
+        <span data-ar="إصدارات محدودة ببطاقات حكاية وجواز أثر ثقافي مترجم مع كل قطعة" data-en="Limited editions with story cards and a translated cultural impact passport with every piece">
+            إصدارات محدودة ببطاقات حكاية وجواز أثر ثقافي مترجم مع كل قطعة
+        </span>
     </div>
 
-    <!-- برمجة التحكم في الصوت والمؤثرات -->
-    <script>
-        const audio = document.getElementById('taleedAudio');
-        const playBtn = document.getElementById('playBtn');
-        const playIcon = document.getElementById('playIcon');
-        const soundWave = document.getElementById('soundWave');
-        const audioTimer = document.getElementById('audioTimer');
+    <!-- الهيدر -->
+    <header>
+        <h1><a href="#top" style="color: inherit; text-decoration: none;">تَلِيد | TALEED</a></h1>
+        <div class="header-right">
+            <div class="lang-selector">
+                <select id="langSelect" onchange="changeLanguage(this.value)">
+                    <option value="ar" selected>العربية</option>
+                    <option value="en">English</option>
+                </select>
+            </div>
+            <a href="#order" class="btn" data-ar="اطلبي الإصدار الأول" data-en="Order First Edition">اطلبي الإصدار الأول</a>
+        </div>
+    </header>
 
-        function toggleAudio() {
-            if (audio.paused) {
-                audio.play();
-                playIcon.innerHTML = '<path d="M6 19h4V5H6v14zm8-14v14h4V5h-4z"/>'; // أيقونة الإيقاف المؤقت
-                playBtn.classList.add('playing');
-                soundWave.classList.add('active');
-            } else {
-                audio.pause();
-                playIcon.innerHTML = '<path d="M8 5v14l11-7z"/>'; // أيقونة التشغيل
-                playBtn.classList.remove('playing');
-                soundWave.classList.remove('active');
+    <!-- القسم الرئيسي -->
+    <section class="hero">
+        <h1 data-ar="حيث تلتقي الطبيعة بالتراث" data-en="Where Nature Meets Heritage">حيث تلتقي الطبيعة بالتراث</h1>
+        <p data-ar="مجوهرات معاصرة مستوحاة من تفاصيل البيئة السعودية والهوية الثقافية، مصممة بلغة عالمية لتناسب يومك بكل أناقة." data-en="Contemporary jewelry inspired by the details of the Saudi environment and cultural identity, designed with a global language to suit your everyday elegance.">مجوهرات معاصرة مستوحاة من تفاصيل البيئة السعودية والهوية الثقافية، مصممة بلغة عالمية لتناسب يومك بكل أناقة.</p>
+        <a href="#products" class="btn" data-ar="استكشفي المجموعات" data-en="Explore Collections">استكشفي المجموعات</a>
+    </section>
+
+    <!-- شريط المميزات -->
+    <section style="background-color: #2c3e35; color: #d4af37; padding: 15px 20px; text-align: center; font-size: 13px;">
+        <span data-ar="صياغة فاخرة مستوحاة من التراث والبيئة السعودية | طلاء ذهب عيار 18 عالي الجودة | جواز أثر رقمي ومطبوع مع كل قطعة" data-en="Luxury craftsmanship inspired by Saudi heritage | High-quality 18K gold plating | Digital & printed cultural passport with every piece">
+            صياغة فاخرة مستوحاة من التراث والبيئة السعودية | طلاء ذهب عيار 18 عالي الجودة | جواز أثر رقمي ومطبوع مع كل قطعة
+        </span>
+    </section>
+
+    <!-- معرض المنتجات الشامل -->
+    <section id="products">
+        <h2 style="text-align: center; color: #2c3e35;" data-ar="معرض مجوهرات تليد وإصدار جدة" data-en="Taleed Jewelry Showcase & Jeddah Edition">معرض مجوهرات تليد وإصدار جدة</h2>
+        <p style="text-align: center; margin-bottom: 40px; color: #666;" data-ar="استكشفي التشكيلات الكاملة وتفاصيل القطع المصاغة بعناية من التراث والطبيعة" data-en="Explore the complete collections and meticulously crafted pieces inspired by heritage and nature">استكشفي التشكيلات الكاملة وتفاصيل القطع المصاغة بعناية من التراث والطبيعة</p>
+        
+        <div class="product-showcase">
+            
+            <!-- 1. مجموعة تليد الأساسية -->
+            <div class="product-item">
+                <div class="product-visual">
+                    <img src="talid-collection.png" alt="مجموعة تليد الأساسية">
+                </div>
+                <div class="product-info">
+                    <span class="product-tag" data-ar="مجموعة تليد الكلاسيكية" data-en="Taleed Classic Collection">مجموعة تليد الكلاسيكية</span>
+                    <h3 data-ar="مجموعة تليد العريقة" data-en="The Heritage Collection">مجموعة تليد العريقة</h3>
+                    <p data-ar="القطع التأسيسية للبراند، مستوحاة من خطوط نواة التمر والبن الخولاني بلمسات مطلية بالذهب المتألق تعكس الإرث العريق." data-en="Foundational pieces inspired by date pits and Khawlani coffee beans, with radiant gold-plated touches reflecting deep heritage.">القطع التأسيسية للبراند، مستوحاة من خطوط نواة التمر والبن الخولاني بلمسات مطلية بالذهب المتألق تعكس الإرث العريق.</p>
+                    <div style="margin-bottom: 15px;">
+                        <button onclick="openStoryModal('مجموعة تليد العريقة', 'Taleed Heritage Collection', '📍 24.7136° N, 46.6753° E', 'قطع تأسيسية تعبر عن أصالة النخيل وكرم الضيافة بأسلوب معاصر.', 'Foundational pieces expressing the authenticity of palms and hospitality in a contemporary style.')" 
+                                style="background: none; border: 1px solid #d4af37; color: #a67c52; padding: 5px 12px; border-radius: 15px; cursor: pointer; font-family: Tajawal; font-size: 12px; font-weight: bold;"
+                                data-ar="📜 حكاية الأثر | Story Card" data-en="📜 Story Card">📜 حكاية الأثر | Story Card</button>
+                    </div>
+                    <div class="product-actions">
+                        <span class="price" data-ar="تبدأ من 250 ريال" data-en="Starts from 250 SAR">تبدأ من 250 ريال</span>
+                        <a href="#order" class="add-to-cart-btn"><i class="fas fa-shopping-bag"></i> <span data-ar="احجزي القطعة" data-en="Reserve Piece">احجزي القطعة</span></a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 2. قلادة نواة جدة (إصدار حصري) -->
+            <div class="product-item">
+                <div class="product-visual">
+                    <img src="jed-001.png" alt="قلادة نواة جدة">
+                </div>
+                <div class="product-info">
+                    <span class="product-tag" style="background-color: #D4AF37; color: #0E1A14; font-weight: bold;" data-ar="⭐ إصدار حصري - JED-001" data-en="⭐ Exclusive Edition - JED-001">⭐ إصدار حصري - JED-001</span>
+                    <h3 data-ar="قلادة نواة جدة" data-en="Jeddah Date Pit Pendant">قلادة نواة جدة</h3>
+                    <p data-ar="قلادة مصاغة بدقة ومطلية بالذهب الفاخر عيار 18 بتفاصيل تحاكي الطبيعة وزخارف الرواشين الحجازية." data-en="A meticulously crafted pendant plated in luxurious 18K gold with details mimicking nature and Hijazi Rawasheen motifs.">قلادة مصاغة بدقة ومطلية بالذهب الفاخر عيار 18 بتفاصيل تحاكي الطبيعة وزخارف الرواشين الحجازية.</p>
+                    <div style="margin-bottom: 15px;">
+                        <button onclick="openStoryModal('قلادة نواة جدة', 'Jeddah Date Pit Pendant', '📍 21.5433° N, 39.1728° E', 'تجمع بين انحناءات النواة وانسيابية المشربيات الحجازية في جدة التاريخية. تأتي هذه القطعة الحصرية مع بطاقة أثر تحمل رمزاً صوتياً خاصاً بعد الشراء.', 'Combines date pit curves with the fluidity of Hijazi Mashrabiya in Historic Jeddah. Comes with a unique audio QR card after purchase.')" 
+                                style="background: none; border: 1px solid #d4af37; color: #a67c52; padding: 5px 12px; border-radius: 15px; cursor: pointer; font-family: Tajawal; font-size: 12px; font-weight: bold;"
+                                data-ar="📜 حكاية الأثر والتجربة الصوتية" data-en="📜 Story & Audio Experience">📜 حكاية الأثر والتجربة الصوتية</button>
+                    </div>
+                    <div class="product-actions">
+                        <span class="price" data-ar="350 ريال" data-en="350 SAR">350 ريال</span>
+                        <a href="#order" class="add-to-cart-btn"><i class="fas fa-shopping-bag"></i> <span data-ar="احجزي القطعة" data-en="Reserve Piece">احجزي القطعة</span></a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 3. مجموعة الجوهر الطبيعي -->
+            <div class="product-item">
+                <div class="product-visual">
+                    <img src="natural-core-collection.png.jpg" alt="مجموعة الجوهر الطبيعي">
+                </div>
+                <div class="product-info">
+                    <span class="product-tag" data-ar="إصدار جدة — الجوهر الطبيعي" data-en="Jeddah Edition — Natural Core">إصدار جدة — الجوهر الطبيعي</span>
+                    <h3 data-ar="مجموعة الجوهر الطبيعي والأقراط" data-en="Natural Core Collection & Earrings">مجموعة الجوهر الطبيعي والأقراط</h3>
+                    <p data-ar="تضم قلادة نواة جدة المطلية بالذهب بالإضافة إلى أقراط الأذن غير المتماثلة التي تجمع بين النواة والهندسة الحجازية." data-en="Includes the gold-plated Jeddah pendant alongside asymmetrical earrings blending the date pit with Hijazi architecture.">تضم قلادة نواة جدة المطلية بالذهب بالإضافة إلى أقراط الأذن غير المتماثلة التي تجمع بين النواة والهندسة الحجازية.</p>
+                    <div style="margin-bottom: 15px;">
+                        <button onclick="openStoryModal('مجموعة الجوهر الطبيعي', 'Natural Core Collection', '📍 21.5433° N, 39.1728° E', 'تصميم الأقراط غير المتماثلة يعكس الفلسفة المعمارية الحديثة القائمة على التباين والتناغم الحجازي.', 'Asymmetrical earrings design reflects modern architectural philosophy based on contrast and Hijazi harmony.')" 
+                                style="background: none; border: 1px solid #d4af37; color: #a67c52; padding: 5px 12px; border-radius: 15px; cursor: pointer; font-family: Tajawal; font-size: 12px; font-weight: bold;"
+                                data-ar="📜 حكاية الأثر | Story Card" data-en="📜 Story Card">📜 حكاية الأثر | Story Card</button>
+                    </div>
+                    <div class="product-actions">
+                        <span class="price" data-ar="200 - 350 ريال" data-en="200 - 350 SAR">200 - 350 ريال</span>
+                        <a href="#order" class="add-to-cart-btn"><i class="fas fa-shopping-bag"></i> <span data-ar="احجزي القطعة" data-en="Reserve Piece">احجزي القطعة</span></a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 4. قلادة الرواشين التفاعلية -->
+            <div class="product-item">
+                <div class="product-visual">
+                    <img id="modularPendantImg" src="rawashin-interactive.png.jpg" alt="قلادة الرواشين المتحركة">
+                </div>
+                <div class="product-info">
+                    <span class="product-tag" data-ar="SKU: JED-003 (متحركة)" data-en="SKU: JED-003 (Modular)">SKU: JED-003 (متحركة)</span>
+                    <h3 data-ar="قلادة الرواشين التفاعلية" data-en="Interactive Rawashin Pendant">قلادة الرواشين التفاعلية</h3>
+                    <p data-ar="قطعة مبتكرة مطلية بالذهب عيار 18 قابلة للارتداء بطريقتين؛ وجه يعكس الرواشين الحجازية، ووجه يعكس طبيعة السدر." data-en="An innovative 18K gold-plated piece wearable two ways; one side reflecting Hijazi Rawasheen, the other Sidr nature.">قطعة مبتكرة مطلية بالذهب عيار 18 قابلة للارتداء بطريقتين؛ وجه يعكس الرواشين الحجازية، ووجه يعكس طبيعة السدر.</p>
+                    <div style="margin-bottom: 15px;">
+                        <button onclick="openStoryModal('قلادة الرواشين التفاعلية', 'Interactive Rawashin Pendant', '📍 21.5433° N, 39.1728° E', 'تصميم معاصر قابل للدوران يمنحك خيار التبديل بين الأصالة الحجازية وأناقة الطبيعة بلمسة واحدة.', 'A rotatable contemporary design giving you the option to switch between Hijazi authenticity and nature elegance.')" 
+                                style="background: none; border: 1px solid #d4af37; color: #a67c52; padding: 5px 12px; border-radius: 15px; cursor: pointer; font-family: Tajawal; font-size: 12px; font-weight: bold;"
+                                data-ar="📜 حكاية الأثر | Story Card" data-en="📜 Story Card">📜 حكاية الأثر | Story Card</button>
+                    </div>
+                    <div class="product-actions">
+                        <span class="price" data-ar="300 - 450 ريال" data-en="300 - 450 SAR">300 - 450 ريال</span>
+                        <a href="#order" class="add-to-cart-btn"><i class="fas fa-shopping-bag"></i> <span data-ar="احجزي القطعة" data-en="Reserve Piece">احجزي القطعة</span></a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 5. حزام الرواشين التفاعلي -->
+            <div class="product-item">
+                <div class="product-visual">
+                    <img src="Taleed-belt.jpg" alt="حزام الرواشين التفاعلي">
+                </div>
+                <div class="product-info">
+                    <span class="product-tag" data-ar="إصدار خاص — أحزمة الخصر" data-en="Special Edition — Waist Belts">إصدار خاص — أحزمة الخصر</span>
+                    <h3 data-ar="حزام الرواشين التفاعلي" data-en="Interactive Rawashin Belt">حزام الرواشين التفاعلي</h3>
+                    <p data-ar="حزام أنيق مطلي بالذهب عيار 18 قابل للتعديل والتحول؛ يمكن فك إبزيمه المركزي ليرتدى كقلادة فاخرة أو بروش." data-en="An elegant 18K gold-plated adjustable belt; its central buckle can be detached to wear as a luxury pendant or brooch.">حزام أنيق مطلي بالذهب عيار 18 قابل للتعديل والتحول؛ يمكن فك إبزيمه المركزي ليرتدى كقلادة فاخرة أو بروش.</p>
+                    <div style="margin-bottom: 15px;">
+                        <button onclick="openStoryModal('حزام الرواشين التفاعلي', 'Interactive Rawashin Belt', '📍 21.5433° N, 39.1728° E', 'مستوحى من المحزم الحجازي الأصيل بإعادة صياغة عصرية تسمح بتنسيقه مع العبايات.', 'Inspired by the authentic Hijazi belt reimagined in a modern style to coordinate with Abayas.')" 
+                                style="background: none; border: 1px solid #d4af37; color: #a67c52; padding: 5px 12px; border-radius: 15px; cursor: pointer; font-family: Tajawal; font-size: 12px; font-weight: bold;"
+                                data-ar="📜 حكاية الأثر | Story Card" data-en="📜 Story Card">📜 حكاية الأثر | Story Card</button>
+                    </div>
+                    <div class="product-actions">
+                        <span class="price" data-ar="550 - 750 ريال" data-en="550 - 750 SAR">550 - 750 ريال</span>
+                        <a href="#order" class="add-to-cart-btn"><i class="fas fa-shopping-bag"></i> <span data-ar="احجزي القطعة" data-en="Reserve Piece">احجزي القطعة</span></a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 6. دلاية المفاتيح الفاخرة -->
+            <div class="product-item">
+                <div class="product-visual">
+                    <img src="Key-charm.png" alt="دلاية المفاتيح الفاخرة">
+                </div>
+                <div class="product-info">
+                    <span class="product-tag" data-ar="إصدار حصري — إكسسوارات متعددة الاستخدام" data-en="Exclusive Edition — Multi-use Accessories">إصدار حصري — إكسسوارات متعددة الاستخدام</span>
+                    <h3 data-ar="دلاية المفاتيح الفاخرة | Heritage Key Charm" data-en="Heritage Key Charm">دلاية المفاتيح الفاخرة | Heritage Key Charm</h3>
+                    <p data-ar="قطعة تجمع بين أصالة التراث وجمال الطبيعة بقطع قابلة للفصل لتستخدم كمفتاح، دلاية شنطة، أو إكسسوار للعباية." data-en="A piece blending heritage and nature with detachable parts to use as a keychain, bag charm, or abaya accessory.">قطعة تجمع بين أصالة التراث وجمال الطبيعة بقطع قابلة للفصل لتستخدم كمفتاح، دلاية شنطة، أو إكسسوار للعباية.</p>
+                    <div style="margin-bottom: 15px;">
+                        <button onclick="openStoryModal('دلاية المفاتيح الفاخرة', 'Heritage Key Charm', '📍 21.5433° N, 39.1728° E', 'مصاغة بذهب عيار 18 والتركواز الطبيعي، مستوحاة من عراقة النخيل والهندسة المعمارية.', 'Crafted in 18K gold and natural turquoise, inspired by palm heritage and architecture.')" 
+                                style="background: none; border: 1px solid #d4af37; color: #a67c52; padding: 5px 12px; border-radius: 15px; cursor: pointer; font-family: Tajawal; font-size: 12px; font-weight: bold;"
+                                data-ar="📜 حكاية الأثر | Story Card" data-en="📜 Story Card">📜 حكاية الأثر | Story Card</button>
+                    </div>
+                    <div class="product-actions">
+                        <span class="price" data-ar="280 - 380 ريال" data-en="280 - 380 SAR">280 - 380 ريال</span>
+                        <a href="#order" class="add-to-cart-btn"><i class="fas fa-shopping-bag"></i> <span data-ar="احجزي القطعة" data-en="Reserve Piece">احجزي القطعة</span></a>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- قسم تشويقي خاص بـ تجربة الأثر والصوت -->
+    <section class="experience-teaser">
+        <div style="max-width: 700px; margin: 0 auto;">
+            <div class="teaser-badge" data-ar="✨ ميزة حصرية للقطع الحصرية" data-en="✨ Exclusive Feature for Limited Pieces">✨ ميزة حصرية للقطع الحصرية</div>
+            <h2 style="font-family: 'Amiri', serif; color: #D4AF37; font-size: 28px; margin-bottom: 15px;" data-ar="أكثر من مجرد قطعة مجوهرات.. أثرٌ يهمس بحكايته" data-en="More Than Just Jewelry.. An Impact Whispering Its Story">أكثر من مجرد قطعة مجوهرات.. أثرٌ يهمس بحكايته</h2>
+            <p style="font-size: 15px; line-height: 1.8; color: #E2E8E4; margin-bottom: 25px;" data-ar="تأتي كل قطعة من الإصدارات الحصرية مرفقة بـ &lt;strong&gt;&quot;جواز أثر ثقافي&quot;&lt;/strong&gt; وبطاقة خاصة تتضمن رمزا تفاعليا (QR). عند اقتنائك للقطعة ومسح الرمز، ينفتح لك تسجيل صوتی خاص يربطك بروح المكان، تاريخه، وإحداثياته الجغرافية." data-en="Each piece from the exclusive editions comes with a &lt;strong&gt;&quot;Cultural Impact Passport&quot;&lt;/strong&gt; and a special card containing a QR code. When you acquire the piece and scan the code, a private audio recording opens, connecting you to the soul, history, and coordinates of the place.">
+                تأتي كل قطعة من الإصدارات الحصرية مرفقة بـ <strong>"جواز أثر ثقافي"</strong> وبطاقة خاصة تتضمن رمزا تفاعليا (QR). عند اقتنائك للقطعة ومسح الرمز، ينفتح لك تسجيل صوتی خاص يربطك بروح المكان، تاريخه، وإحداثياته الجغرافية.
+            </p>
+            <a href="#order" class="btn" style="background-color: #D4AF37; color: #0E1A14; font-weight: bold;" data-ar="انضمي لقائمة المنتظرين" data-en="Join the Waitlist">انضمي لقائمة المنتظرين</a>
+        </div>
+    </section>
+
+    <!-- قسم فلسفة التغيير والتصميم التفاعلي -->
+    <section class="diagram-section" style="background-color: #f7f5f0; padding: 50px 20px; text-align: center;">
+        <h2 style="color: #2c3e35; font-family: Tajawal; margin-bottom: 10px;" data-ar="فلسفة التغيير والتصميم التفاعلي" data-en="Philosophy of Transformation & Modular Design">فلسفة التغيير والتصميم التفاعلي</h2>
+        <p style="margin-bottom: 25px; color: #555;" data-ar="كيف تتحول القطعة الواحدة لتناسب مختلف إطلالاتك اليومية والرسمية" data-en="How a single piece transforms to suit your daily and formal looks">كيف تتحول القطعة الواحدة لتناسب مختلف إطلالاتك اليومية والرسمية</p>
+        <div class="img-container" style="max-width: 850px; margin: 0 auto;">
+            <img src="wear-options-diagram.png.jpg" alt="رسم توضيحي لخيارات الارتداء" style="width: 100%; border-radius: 12px; box-shadow: 0 5px 20px rgba(0,0,0,0.08);">
+        </div>
+    </section>
+
+    <!-- قسم الطلب المسبق -->
+    <section id="order">
+        <div class="waitlist">
+            <h2 data-ar="كوني أول من يمتلك قطعة من تليد" data-en="Be the First to Own a Taleed Piece">كوني أول من يمتلك قطعة من تليد</h2>
+            <p data-ar="سجلي بياناتك لنضمك في قائمة الإصدار المحدود ولنخبرك فور توفر العينات الأولى." data-en="Register your details to join the limited edition waitlist and be notified when the first samples arrive.">سجلي بياناتك لنضمك في قائمة الإصدار المحدود ولنخبرك فور توفر العينات الأولى.</p>
+            <form onsubmit="handleFormSubmit(event)">
+                <input type="text" id="nameInput" placeholder="الاسم الكريم" required data-ar-placeholder="الاسم الكريم" data-en-placeholder="Full Name">
+                <input type="email" id="emailInput" placeholder="البريد الإلكتروني أو رقم الجوال" required data-ar-placeholder="البريد الإلكتروني أو رقم الجوال" data-en-placeholder="Email or Phone Number">
+                <button type="submit" class="btn" style="background-color: #D4AF37; color: #2C3E35;" data-ar="سجلي اهتمامك" data-en="Register Interest">سجلي اهتمامك</button>
+            </form>
+        </div>
+    </section>
+
+    <!-- النافذة المنبثقة الفاخرة لعرض حكاية الأثر -->
+    <div id="storyModal" class="story-modal">
+        <div class="story-modal-content">
+            <span class="modal-close" onclick="closeStoryModal()">&times;</span>
+            <div id="modalTitle" class="modal-title">عنوان القطعة</div>
+            <div id="modalCoords" class="modal-coords">📍 الإحداثيات الجغرافية</div>
+            <p id="modalText" class="modal-text">تفاصيل قصة الأثر...</p>
+            <button onclick="closeStoryModal()" style="background: #D4AF37; border: none; color: #0E1A14; padding: 8px 20px; border-radius: 20px; font-weight: bold; cursor: pointer; font-family: Tajawal;" data-ar="إغلاق" data-en="Close">إغلاق</button>
+        </div>
+    </div>
+
+    <footer>
+        <p data-ar="&copy; 2026 تليد (Taleed). جميع الحقوق محفوظة." data-en="&copy; 2026 Taleed. All rights reserved.">&copy; 2026 تليد (Taleed). جميع الحقوق محفوظة.</p>
+    </footer>
+
+    <!-- البرمجة الخاصة بالنوافذ والتبديل بين اللغات -->
+    <script>
+        let currentLang = 'ar';
+        let activeModalData = { arTitle: '', enTitle: '', coords: '', arText: '', enText: '' };
+
+        function openStoryModal(arTitle, enTitle, coords, arText, enText) {
+            activeModalData = { arTitle, enTitle, coords, arText, enText };
+            updateModalContent();
+            document.getElementById('storyModal').style.display = 'flex';
+        }
+
+        function updateModalContent() {
+            document.getElementById('modalTitle').innerText = currentLang === 'en' ? activeModalData.enTitle : activeModalData.arTitle;
+            document.getElementById('modalCoords').innerText = activeModalData.coords;
+            document.getElementById('modalText').innerText = currentLang === 'en' ? activeModalData.enText : activeModalData.arText;
+        }
+
+        function closeStoryModal() {
+            document.getElementById('storyModal').style.display = 'none';
+        }
+
+        window.onclick = function(event) {
+            const modal = document.getElementById('storyModal');
+            if (event.target == modal) {
+                modal.style.display = "none";
             }
         }
 
-        // تحديث العداد والموجات الصوتية عند انتهاء المقطع
-        audio.addEventListener('ended', () => {
-            playIcon.innerHTML = '<path d="M8 5v14l11-7z"/>';
-            playBtn.classList.remove('playing');
-            soundWave.classList.remove('active');
-        });
+        // دالة تغيير اللغة ديناميكياً
+        function changeLanguage(lang) {
+            currentLang = lang;
+            const root = document.getElementById('htmlRoot');
+            root.setAttribute('lang', lang);
+            root.setAttribute('dir', lang === 'ar' ? 'rtl' : 'ltr');
 
-        // تحديث العداد الزمني بالثواني
-        audio.addEventListener('timeupdate', () => {
-            const current = formatTime(audio.currentTime);
-            const duration = isNaN(audio.duration) ? '00:18' : formatTime(audio.duration);
-            audioTimer.innerText = `${current} / ${duration}`;
-        });
+            // ترجمة العناصر التي تحمل السمات
+            const elements = document.querySelectorAll('[data-ar]');
+            elements.forEach(el => {
+                if (lang === 'en' && el.getAttribute('data-en')) {
+                    el.innerHTML = el.getAttribute('data-en');
+                } else if (lang === 'ar' && el.getAttribute('data-ar')) {
+                    el.innerHTML = el.getAttribute('data-ar');
+                }
+            });
 
-        function formatTime(seconds) {
-            const mins = Math.floor(seconds / 60);
-            const secs = Math.floor(seconds % 60);
-            return `${mins < 10 ? '0' : ''}${mins}:${secs < 10 ? '0' : ''}${secs}`;
+            // ترجمة حقول الإدخال (Placeholder)
+            const inputs = document.querySelectorAll('[data-ar-placeholder]');
+            inputs.forEach(input => {
+                if (lang === 'en' && input.getAttribute('data-en-placeholder')) {
+                    input.placeholder = input.getAttribute('data-en-placeholder');
+                } else if (lang === 'ar' && input.getAttribute('data-ar-placeholder')) {
+                    input.placeholder = input.getAttribute('data-ar-placeholder');
+                }
+            });
+
+            // تحديث محتوى النافذة المنبثقة إن كانت مفتوحة
+            if(document.getElementById('storyModal').style.display === 'flex') {
+                updateModalContent();
+            }
         }
     </script>
+    <script src="script.js"></script>
 </body>
 </html>
